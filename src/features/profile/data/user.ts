@@ -32,8 +32,7 @@ I’m a front-end engineer from Mumbai with 3+ years of experience building mode
 Currently, I work @Inline 3 Media Solutions, where I contribute to developing e-commerce platforms and digital solutions across industries like automotive, jewelry, and lifestyle. My approach is rooted in clean code, usability, and performance, with a constant drive to explore emerging technologies that elevate user experiences.
   `,
   avatar: "/shubh_avatar.png",
-  // ogImage:
-  //   "https://assets.chanhdai.com/images/screenshot-og-image-light.png?t=1755355653",
+  ogImage: "/ogimage.png",
   namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
   keywords: [
     "shubhk",
