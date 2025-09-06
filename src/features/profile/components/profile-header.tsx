@@ -26,11 +26,192 @@ export function ProfileHeader() {
           viewBox="0 0 30 20"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="30" height="20" fill="#F00" />
-          <polygon
-            points="15,4 11.47,14.85 20.71,8.15 9.29,8.15 18.53,14.85"
-            fill="#FFEB00"
-          />
+          {/* Tricolor */}
+          <rect width="30" height="6.6667" y="0" fill="#FF9933" />
+          <rect width="30" height="6.6667" y="6.6667" fill="#FFFFFF" />
+          <rect width="30" height="6.6667" y="13.3333" fill="#138808" />
+
+          {/* Ashoka Chakra */}
+          <g
+            stroke="#000080"
+            strokeWidth="0.4"
+            fill="none"
+            strokeLinecap="round"
+          >
+            {/* Outer wheel */}
+            <circle cx="15" cy="10" r="3.3333" />
+            {/* Hub */}
+            <circle cx="15" cy="10" r="0.5" fill="#000080" stroke="none" />
+            {/* 24 spokes */}
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(0 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(15 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(30 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(45 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(60 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(75 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(90 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(105 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(120 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(135 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(150 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(165 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(180 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(195 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(210 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(225 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(240 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(255 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(270 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(285 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(300 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(315 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(330 15 10)"
+            />
+            <line
+              x1="15"
+              y1="10"
+              x2="15"
+              y2="6.6667"
+              transform="rotate(345 15 10)"
+            />
+          </g>
         </svg>
       </div>
 

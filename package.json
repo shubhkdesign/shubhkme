@@ -5,20 +5,20 @@
   "homepage": "https://chanhdai.com",
   "license": "MIT",
   "author": {
-    "name": "Nguyen Chanh Dai",
-    "email": "dai@chanhdai.com",
-    "url": "https://github.com/ncdai"
+    "name": "Shubham Khade",
+    "email": "shubham@shubhk.me",
+    "url": "https://github.com/shubhkdesign"
   },
   "contributors": [
     {
-      "name": "Nguyen Chanh Dai",
-      "email": "dai@chanhdai.com",
+      "name": "Shubham Khade",
+      "email": "shubham@shubhk.me",
       "url": "https://github.com/ncdai"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ncdai/chanhdai.com.git"
+    "url": "git+https://github.com/shubhkdesign/shubhkme.git"
   },
   "scripts": {
     "dev": "next dev -p 1408 --turbopack",
