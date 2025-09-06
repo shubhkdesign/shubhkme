@@ -1,15 +1,9 @@
-# [chanhdai.com](https://chanhdai.com)
+# [shubhk.me](https://www.shubhk.me)
 
 A minimal portfolio, component registry, and blog to showcase my work as a Design Engineer.
 
 Check out the live site: [shubhk.me](https://shubhk.me)
 
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://assets.chanhdai.com/images/screenshot-desktop-dark.webp">
-  <source media="(prefers-color-scheme: light)" srcset="https://assets.chanhdai.com/images/screenshot-desktop-light.webp">
-  <img src="https://assets.chanhdai.com/images/screenshot-desktop-light.webp" alt="Screenshot">
-</picture>
 
 ## Overview
 
@@ -19,7 +13,7 @@ Check out the live site: [shubhk.me](https://shubhk.me)
 - Tailwind CSS v4
 - shadcn/ui
 
-### Featured
+### Features
 
 - Clean & modern design
 - Light & Dark theme support
