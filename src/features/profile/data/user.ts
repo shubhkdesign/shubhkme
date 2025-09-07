@@ -33,7 +33,7 @@ Currently, I work @Inline 3 Media Solutions, where I contribute to developing e-
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",
-  namePronunciationUrl: "https://assets.chanhdai.com/audio/chanhdai.mp3",
+  namePronunciationUrl: "/Shubham Khade pronunciation.mp3",
   keywords: [
     "shubhk",
     "shubhamanilkhade",
