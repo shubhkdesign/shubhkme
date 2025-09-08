@@ -23,7 +23,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     icon: "/behance logo_cr.png",
     title: "Behance",
     description: "@shubhkhade",
-    href: "behance.net/shubhkhade",
+    href: "https://www.behance.net/shubhkhade",
   },
   // {
   //   icon: "https://assets.chanhdai.com/images/link-icons/liquid-glass/zalo.webp",
