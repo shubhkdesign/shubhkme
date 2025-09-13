@@ -54,8 +54,8 @@ export function Brand() {
 
       <div className="flex h-12 items-center justify-center pb-px">
         <Button variant="default" asChild>
-          <Link href="/blog/chanhdai-brand">
-            ChanhDai Brand
+          <Link href="/blog/">
+            ShubhK Logo
             <ArrowRightIcon />
           </Link>
         </Button>
