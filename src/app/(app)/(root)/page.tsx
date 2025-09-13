@@ -44,7 +44,7 @@ export default function Page() {
         <Separator />
 
         {/* <Blog />
-        <Separator />
+        <Separator /> */}
 
         <Experiences />
         <Separator />
@@ -52,13 +52,13 @@ export default function Page() {
         <Projects />
         <Separator />
 
-        <Awards />
-        <Separator />
+        {/* <Awards />
+        <Separator /> */}
 
         <Certifications />
         <Separator />
 
-        <Brand /> */}
+        <Brand />
         <Separator />
       </div>
     </>

@@ -94,12 +94,12 @@ export const TECH_STACK: TechStack[] = [
     href: "https://redux.js.org/",
     categories: ["State Management"],
   },
-  {
-    key: "antd",
-    title: "Ant Design",
-    href: "https://ant.design/",
-    categories: ["Library", "UI Library"],
-  },
+  // {
+  //   key: "antd",
+  //   title: "Ant Design",
+  //   href: "https://ant.design/",
+  //   categories: ["Library", "UI Library"],
+  // },
   {
     key: "react-router",
     title: "React Router",
@@ -113,12 +113,12 @@ export const TECH_STACK: TechStack[] = [
     href: "https://reactnavigation.org/",
     categories: ["Library", "Navigation"],
   },
-  {
-    key: "loopback",
-    title: "LoopBack",
-    href: "https://loopback.io/",
-    categories: ["Framework"],
-  },
+  // {
+  //   key: "loopback",
+  //   title: "LoopBack",
+  //   href: "https://loopback.io/",
+  //   categories: ["Framework"],
+  // },
   {
     key: "laravel",
     title: "Laravel",

@@ -55,12 +55,12 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
           </Link>
         </ContextMenuItem>
 
-        <ContextMenuItem asChild>
+        {/* <ContextMenuItem asChild>
           <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
             <DownloadIcon />
             Download Brand Assets
           </a>
-        </ContextMenuItem>
+        </ContextMenuItem> */}
       </ContextMenuContent>
     </ContextMenu>
   );
