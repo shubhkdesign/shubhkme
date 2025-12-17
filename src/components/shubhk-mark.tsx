@@ -1,4 +1,4 @@
-export function ChanhDaiMark(props: React.ComponentProps<"svg">) {
+export function ShubhKMark(props: React.ComponentProps<"svg">) {
   return (
     // <svg
     //   xmlns="http://www.w3.org/2000/svg"
@@ -38,5 +38,5 @@ export function ChanhDaiMark(props: React.ComponentProps<"svg">) {
 
 export function getMarkSVG(color: string) {
   // return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 256 128"><path fill="${color}" d="M96 128H32V96h64v32ZM224 32h-64v64h64v32h-96V0h96v32ZM32 96H0V32h32v64ZM256 96h-32V32h32v64ZM96 32H32V0h64v32Z"/></svg>`;
-  return '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 256"><path fill=${color} d="M144 48h96v32h-96V48Z M144 80h32v32h-32V80Z M144 112h96v32h-96v-32Z M208 144h32v32h-32v-32Z M144 176h96v32h-96v-32Z M272 48h32v160h-32V48Z M304 80h32v32h-32V80Z M336 48h32v32h-32V48Z M304 112h10v32h-10v-32Z M304 144h32v32h-32v-32Z M336 176h32v32h-32v-32Z"/></svg>';
+  return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 512 256"><path fill="${color}" d="M144 48h96v32h-96V48Z M144 80h32v32h-32V80Z M144 112h96v32h-96v-32Z M208 144h32v32h-32v-32Z M144 176h96v32h-96v-32Z M272 48h32v160h-32V48Z M304 80h32v32h-32V80Z M336 48h32v32h-32V48Z M304 112h10v32h-10v-32Z M304 144h32v32h-32v-32Z M336 176h32v32h-32v-32Z"/></svg>`;
 }

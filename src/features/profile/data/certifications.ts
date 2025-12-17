@@ -4,8 +4,7 @@ export const CERTIFICATIONS: Certification[] = [
   {
     title: "Certificate of Trademark Registration No. 543682",
     issuer: "Intellectual Property Office of Viet Nam",
-    issuerLogoURL:
-      "https://assets.chanhdai.com/images/companies/ipvietnam.webp",
+    issuerLogoURL: "https://assets.shubhk.me/images/companies/ipvietnam.webp",
     issueDate: "2025-05-08",
     credentialID: "543682",
     credentialURL:
@@ -41,7 +40,7 @@ export const CERTIFICATIONS: Certification[] = [
   {
     title: "Certificate of Copyright Registration No. 0040/2025/QTG",
     issuer: "Copyright Office of Viet Nam",
-    issuerLogoURL: "https://assets.chanhdai.com/images/companies/cov.webp",
+    issuerLogoURL: "https://assets.shubhk.me/images/companies/cov.webp",
     issueDate: "2025-01-02",
     credentialID: "0040/2025/QTG",
     credentialURL:
@@ -50,8 +49,7 @@ export const CERTIFICATIONS: Certification[] = [
   {
     title: "Vietnamese Standardized Test of English Proficiency (CEFR B1)",
     issuer: "USSH-VNUHCM",
-    issuerLogoURL:
-      "https://assets.chanhdai.com/images/companies/ussh-vnuhcm.webp",
+    issuerLogoURL: "https://assets.shubhk.me/images/companies/ussh-vnuhcm.webp",
     issueDate: "2024-12-17",
     credentialID: "QH58202305187",
     credentialURL:
@@ -60,7 +58,7 @@ export const CERTIFICATIONS: Certification[] = [
   {
     title: "Certificate of Copyright Registration No. 7994/2024/QTG",
     issuer: "Copyright Office of Viet Nam",
-    issuerLogoURL: "https://assets.chanhdai.com/images/companies/cov.webp",
+    issuerLogoURL: "https://assets.shubhk.me/images/companies/cov.webp",
     issueDate: "2024-09-18",
     credentialID: "7994/2024/QTG",
     credentialURL:

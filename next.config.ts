@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "assets.chanhdai.com",
+        hostname: "assets.shubhk.me",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "5byjrfba1kp9tv4c.public.blob.vercel-storage.com",
         port: "",
       },
     ],
@@ -17,6 +22,17 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      {
+        source: "/:path*",
+        destination:
+          "https://5byjrfba1kp9tv4c.public.blob.vercel-storage.com/:path*",
+        has: [
+          {
+            type: "host",
+            value: "assets.shubhk.me",
+          },
+        ],
+      },
       {
         source: "/blog/:slug.mdx",
         destination: "/blog.mdx/:slug",

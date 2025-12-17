@@ -35,9 +35,9 @@ import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { cn } from "@/lib/utils";
 import { copyText } from "@/utils/copy";
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark";
-import { getWordmarkSVG } from "./chanhdai-wordmark";
 import { Icons } from "./icons";
+import { getMarkSVG, ShubhKMark } from "./shubhk-mark";
+import { getWordmarkSVG } from "./shubhk-wordmark";
 import { Button } from "./ui/button";
 import { Separator } from "./ui/separator";
 
@@ -53,9 +53,9 @@ type CommandLinkItem = {
 
 const MENU_LINKS: CommandLinkItem[] = [
   {
-    title: "Daifolio",
+    title: "ShubhK",
     href: "/",
-    icon: ChanhDaiMark,
+    icon: ShubhKMark,
   },
   {
     title: "Blog",
@@ -69,7 +69,7 @@ const MENU_LINKS: CommandLinkItem[] = [
   },
 ];
 
-const DAIFOLIO_LINKS: CommandLinkItem[] = [
+const SHUBHK_LINKS: CommandLinkItem[] = [
   {
     title: "About",
     href: "/#about",
@@ -238,8 +238,8 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
           <CommandSeparator />
 
           <CommandLinkGroup
-            heading="Daifolio"
-            links={DAIFOLIO_LINKS}
+            heading="ShubhK"
+            links={SHUBHK_LINKS}
             onLinkSelect={handleOpenLink}
           />
 
@@ -280,7 +280,7 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
                 );
               }}
             >
-              <ChanhDaiMark />
+              <ShubhKMark />
               Copy Mark as SVG
             </CommandItem>
 
@@ -296,15 +296,13 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
               Copy Logotype as SVG
             </CommandItem>
 
-            <CommandItem
-              onSelect={() => handleOpenLink("/blog/chanhdai-brand")}
-            >
+            <CommandItem onSelect={() => handleOpenLink("/blog/shubhk-brand")}>
               <TriangleDashedIcon />
               Brand Guidelines
             </CommandItem>
 
             <CommandItem asChild>
-              <a href="https://assets.chanhdai.com/chanhdai-brand.zip" download>
+              <a href="https://assets.shubhk.me/shubhk-brand.zip" download>
                 <DownloadIcon />
                 Download Brand Assets
               </a>
@@ -441,7 +439,7 @@ function CommandMenuFooter() {
       <div className="flex h-10" />
 
       <div className="absolute inset-x-0 bottom-0 flex h-10 items-center justify-between gap-2 border-t bg-zinc-100/30 px-4 text-xs font-medium dark:bg-zinc-800/30">
-        <ChanhDaiMark className="size-6 text-muted-foreground" aria-hidden />
+        <ShubhKMark className="size-6 text-muted-foreground" aria-hidden />
 
         <div className="flex shrink-0 items-center gap-2">
           <span>{ENTER_ACTION_LABELS[selectedCommandKind]}</span>

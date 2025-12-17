@@ -7,7 +7,7 @@ export const PROJECTS: Project[] = [
     period: {
       start: "05.2025",
     },
-    link: "https://react-wheel-picker.chanhdai.com",
+    link: "https://react-wheel-picker.shubhk.me",
     skills: [
       "Open Source",
       "React",
@@ -29,20 +29,20 @@ export const PROJECTS: Project[] = [
 This project is proudly supported by:
 
 <a href="https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker">
-<img src="https://assets.chanhdai.com/images/project-logos/vercel-oss-program-badge-white.svg?v=1" alt="Vercel OSS Program" class="hidden [html.dark_&]:block">
-<img src="https://assets.chanhdai.com/images/project-logos/vercel-oss-program-badge-black.svg?v=1" alt="Vercel OSS Program" class="hidden [html.light_&]:block">
+<img src="https://assets.shubhk.me/images/project-logos/vercel-oss-program-badge-white.svg?v=1" alt="Vercel OSS Program" class="hidden [html.dark_&]:block">
+<img src="https://assets.shubhk.me/images/project-logos/vercel-oss-program-badge-black.svg?v=1" alt="Vercel OSS Program" class="hidden [html.light_&]:block">
 </a>
 `,
-    logo: "https://assets.chanhdai.com/images/project-logos/react-wheel-picker.svg",
+    logo: "https://assets.shubhk.me/images/project-logos/react-wheel-picker.svg",
     isExpanded: true,
   },
   {
-    id: "chanhdaidotcom",
-    title: "chanhdai.com",
+    id: "shubhkedotme",
+    title: "shubhk.me",
     period: {
       start: "01.2025",
     },
-    link: "https://github.com/ncdai/chanhdai.com",
+    link: "https://github.com/shubhkdesign/shubhk.me",
     skills: [
       "Open Source",
       "Next.js 15",
@@ -67,7 +67,7 @@ Blog Features:
 - Syntax Highlighting for better readability
 - RSS Feed for easy content distribution
 - Dynamic OG Images for rich previews`,
-    logo: "https://assets.chanhdai.com/images/project-logos/chanhdaidotcom.svg",
+    logo: "https://assets.shubhk.me/images/project-logos/chanhdaidotcom.svg",
   },
   {
     id: "quaricdotcom",
@@ -87,7 +87,7 @@ Blog Features:
       "Docker Compose",
       "NGINX",
     ],
-    logo: "https://assets.chanhdai.com/images/project-logos/quaricdotcom.svg",
+    logo: "https://assets.shubhk.me/images/project-logos/quaricdotcom.svg",
   },
   {
     id: "zadark",
@@ -108,7 +108,7 @@ Blog Features:
 - 80,000+ downloads on SourceForge (awarded Community Leader badge by SourceForge)
 - 15,000+ active users via Chrome Web Store
 - Bronze Medal — 10th Design, Manufacturing, and Application Award 2022`,
-    logo: "https://assets.chanhdai.com/images/project-logos/zadark.svg",
+    logo: "https://assets.shubhk.me/images/project-logos/zadark.svg",
   },
   {
     id: "qabox",
@@ -117,7 +117,7 @@ Blog Features:
       start: "07.2023",
       end: "07.2023",
     },
-    link: "https://github.com/ncdai/qabox",
+    link: "https://github.com/shubhkdesign/qabox",
     skills: [
       "University Project",
       "PHP",
@@ -127,7 +127,7 @@ Blog Features:
       "Docker Compose",
     ],
     description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/qabox",
+      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/shubhkdesign/qabox",
   },
   {
     id: "taskbox",
@@ -136,7 +136,7 @@ Blog Features:
       start: "07.2023",
       end: "07.2023",
     },
-    link: "https://github.com/ncdai/taskbox",
+    link: "https://github.com/shubhkdesign/taskbox",
     skills: [
       "University Project",
       "PHP",
@@ -146,7 +146,7 @@ Blog Features:
       "Docker Compose",
     ],
     description:
-      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/ncdai/taskbox",
+      "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/shubhkdesign/taskbox",
   },
   {
     id: "daichat-app",
@@ -161,8 +161,8 @@ Blog Features:
 - Requirement: Developed a real-time chat application using Java technologies
 - Project Score: 10/10
 - Source Code:
-  - Server: https://github.com/ncdai/ltudjava-summer2020-chatapp_server
-  - Client: https://github.com/ncdai/ltudjava-summer2020-chatapp_client`,
+  - Server: https://github.com/shubhkdesign/ltudjava-summer2020-chatapp_server
+  - Client: https://github.com/shubhkdesign/ltudjava-summer2020-chatapp_client`,
   },
   {
     id: "qlsv-app",
@@ -176,7 +176,7 @@ Blog Features:
     description: `- Course: Java Application Programming — FIT@HCMUS
 - Requirement: Built a student management system with role-based functionalities using Java technologies
 - Project Score: 10/10
-- Source Code: https://github.com/ncdai/ltudjava-summer2020-hibernate`,
+- Source Code: https://github.com/shubhkdesign/ltudjava-summer2020-hibernate`,
   },
   {
     id: "penphy",
@@ -214,7 +214,7 @@ Blog Features:
 - 3rd Prize — Can Tho City Young Informatics Contest 2018
 - Reached 7,000+ users, mainly high school students in Can Tho City.
 - Pilot implemented in high schools across Can Tho City with English quizzes, supervised by English subject specialists from the Can Tho City Department of Education and Training.`,
-    logo: "https://assets.chanhdai.com/images/project-logos/unlimitedstudy.webp",
+    logo: "https://assets.shubhk.me/images/project-logos/unlimitedstudy.webp",
   },
   {
     id: "dmessage",
@@ -223,7 +223,7 @@ Blog Features:
       start: "05.2017",
       end: "05.2017",
     },
-    link: "https://github.com/ncdai/DMessage",
+    link: "https://github.com/shubhkdesign/DMessage",
     skills: [
       "Self-learning Project",
       "Pet Project",

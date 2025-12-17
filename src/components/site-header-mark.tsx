@@ -4,14 +4,14 @@ import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
-import { ChanhDaiMark } from "./chanhdai-mark";
+import { ShubhKMark } from "./shubhk-mark";
 
 export function SiteHeaderMark() {
   const pathname = usePathname();
-  return pathname === "/" ? <ChanhDaiMarkMotion /> : <ChanhDaiMark />;
+  return pathname === "/" ? <ShubhKMarkMotion /> : <ShubhKMark />;
 }
 
-function ChanhDaiMarkMotion() {
+function ShubhKMarkMotion() {
   const { scrollY } = useScroll();
   const [visible, setVisible] = useState(false);
   const distanceRef = useRef(160);

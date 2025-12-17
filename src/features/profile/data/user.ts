@@ -15,7 +15,7 @@ export const USER: User = {
     "Photographer",
   ],
   address: "Mumbai, India",
-  phoneNumber: "KzkxNzAyMTEzMzk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  phoneNumber: "KzkxIDcwMjEgMTMzIDk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "c2h1YmhrZGVzaWduQGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://shubhk.me",
   jobTitle: "Frontend Engineer",
@@ -51,12 +51,14 @@ Currently, I work @Inline 3 Media Solutions, where I contribute to developing e-
   ],
   dateCreated: "2023-10-20", // YYYY-MM-DD
 };
-// Hello, World! I am Chánh Đại — a Design Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
+// Hello, World! I am Shubham Khade — a Frontend Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
 
-// With 5+ years of experience, I specialize in building high-quality web and mobile applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+// With 3+ years of experience, I specialize in building high-quality web applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
 
-// One of my key projects, [ZaDark](https://zadark.com), enhances the Zalo experience on PC and Web, surpassing 80,000 downloads on [SourceForge](https://sourceforge.net/projects/zadark) and 15,000 active users on the [Chrome Web Store](https://chromewebstore.google.com/detail/llfhpkkeljlgnjgkholeppfnepmjppob) since 2022.
+// One of my key projects, [Project Name](https://project.com), ...
 
-// I'm also the creator of [React Wheel Picker](https://react-wheel-picker.chanhdai.com) — iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support. It has earned 300+ stars on [GitHub](https://github.com/ncdai/react-wheel-picker) and was selected for [Vercel Open Source Program](https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker) summer 2025 cohort.
+// I'm also the creator of ...
+
+// Let's connect and collaborate!
 
 // Let's connect and collaborate!

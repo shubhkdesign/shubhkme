@@ -7,7 +7,7 @@ export const components: Registry["items"] = [
     description:
       "A theme switcher component for Next.js apps with next-themes and Tailwind CSS, supporting system, light, and dark modes.",
     title: "Theme Switcher",
-    author: "ncdai <dai@chanhdai.com>",
+    author: "Shubham Khade <shubham@shubhk.me>",
     dependencies: ["next-themes", "lucide-react", "motion"],
     registryDependencies: ["@ncdai/utils"],
     files: [
@@ -16,7 +16,7 @@ export const components: Registry["items"] = [
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/theme-switcher-component",
+    docs: "https://shubhk.me/components/theme-switcher-component",
   },
   {
     name: "flip-sentences",
@@ -47,7 +47,7 @@ export const components: Registry["items"] = [
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/writing-effect-inspired-by-apple",
+    docs: "https://shubhk.me/components/writing-effect-inspired-by-apple",
   },
   {
     name: "wheel-picker",
@@ -64,7 +64,7 @@ export const components: Registry["items"] = [
         type: "registry:component",
       },
     ],
-    docs: "https://chanhdai.com/components/react-wheel-picker",
+    docs: "https://shubhk.me/components/react-wheel-picker",
   },
   {
     name: "work-experience",
@@ -96,6 +96,6 @@ export const components: Registry["items"] = [
         border: "oklch(0.274 0.006 286.033)",
       },
     },
-    docs: "https://chanhdai.com/components/work-experience-component",
+    docs: "https://shubhk.me/components/work-experience-component",
   },
 ];
