@@ -26,6 +26,34 @@ async function findAssetUrls() {
       matches.forEach((url) => urls.add(url));
     }
   }
+
+  // Special handling for Tech Stack icons
+  const techStackFile = "src/features/profile/data/tech-stack.ts";
+  if (fs.existsSync(techStackFile)) {
+    const content = fs.readFileSync(techStackFile, "utf-8");
+    // Simple regex to extract keys and theme property
+    // Matches { key: "foo", ... theme: true? }
+    const entryRegex = /key:\s*"([^"]+)"[\s\S]*?(theme:\s*true)?/g;
+    let match;
+    while ((match = entryRegex.exec(content)) !== null) {
+      const key = match[1];
+      const hasTheme = !!match[2];
+
+      if (hasTheme) {
+        // Construct URLs for light/dark
+        urls.add(
+          `https://assets.shubhk.me/images/tech-stack-icons/${key}-light.svg`
+        );
+        urls.add(
+          `https://assets.shubhk.me/images/tech-stack-icons/${key}-dark.svg`
+        );
+      } else {
+        // Construct URL for single icon
+        urls.add(`https://assets.shubhk.me/images/tech-stack-icons/${key}.svg`);
+      }
+    }
+  }
+
   return Array.from(urls);
 }
 
@@ -49,6 +77,7 @@ async function uploadAsset(url: string) {
     console.log(`Uploading to Blob: ${blobPath}`);
     const { url: newBlobUrl } = await put(blobPath, blob, {
       access: "public",
+      addRandomSuffix: false, // Critical: Ensure exact filename match for Rewrites to work
       token: process.env.BLOB_READ_WRITE_TOKEN,
     });
 

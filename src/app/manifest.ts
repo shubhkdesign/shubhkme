@@ -9,25 +9,25 @@ export default function manifest(): MetadataRoute.Manifest {
     description: SITE_INFO.description,
     icons: [
       {
-        src: "https://assets.shubhk.me/images/icon-vector.svg",
+        src: "https://assets.shubhk.me/images/icon-vector.svg?v=2",
         type: "image/svg+xml",
         sizes: "any",
         purpose: "any",
       },
       {
-        src: "https://assets.shubhk.me/images/icon-192x192.png",
+        src: "https://assets.shubhk.me/images/icon-192x192.png?v=2",
         type: "image/png",
         sizes: "192x192",
         purpose: "any",
       },
       {
-        src: "https://assets.shubhk.me/images/icon-512x512.png",
+        src: "https://assets.shubhk.me/images/icon-512x512.png?v=2",
         type: "image/png",
         sizes: "512x512",
         purpose: "any",
       },
       {
-        src: "https://assets.shubhk.me/images/maskable-icon.png",
+        src: "https://assets.shubhk.me/images/maskable-icon.png?v=2",
         type: "image/png",
         sizes: "512x512",
         purpose: "maskable",
