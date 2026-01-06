@@ -7,7 +7,7 @@ export const USER: User = {
   username: "shubhkdesign",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. Small details matter.",
+  bio: "Front-End Developer | 3D & Animation-Focused (GSAP / Three.js)",
   flipSentences: [
     "Creating with code. Small details matter.",
     "Frontend Engineer",
@@ -18,7 +18,7 @@ export const USER: User = {
   phoneNumber: "KzkxIDcwMjEgMTMzIDk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "c2h1YmhrZGVzaWduQGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://shubhk.me",
-  jobTitle: "Frontend Engineer",
+  jobTitle: "Front-End Developer",
   jobs: [
     {
       title: "Frontend Developer & UI Designer",
@@ -27,9 +27,7 @@ export const USER: User = {
     },
   ],
   about: `
-I’m a front-end engineer from Mumbai with 3+ years of experience building modern, responsive, and scalable web applications. Skilled in React, Next.js, Tailwind, Prisma, PostgreSQL, and Shopify, I enjoy combining engineering precision with creative storytelling through animations and interactive design using tools like GSAP and 3JS.
-
-Currently, I work @Inline 3 Media Solutions, where I contribute to developing e-commerce platforms and digital solutions across industries like automotive, jewelry, and lifestyle. My approach is rooted in clean code, usability, and performance, with a constant drive to explore emerging technologies that elevate user experiences.
+Front-end developer with 3+ years of professional experience building animation-driven, performance-optimized web applications using Next.js, React, TypeScript, Tailwind CSS, and GSAP. Specialized in complex scroll-based animation systems, real-time interaction patterns, and CMS-driven architectures using Payload CMS. Strong understanding of render loops, animation timelines, performance trade-offs, and lifecycle management. Actively extending this foundation into **Three.js** and 3D web visualization for design, automotive, and visualization-focused domains.
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",

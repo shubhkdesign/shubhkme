@@ -14,27 +14,21 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: "code",
-        description: `- Develop [AI Chat](https://help.simplamo.com/features/simplamo-ai/ai-chat/guide_simplamo_ai_chat?ref=IN-926722) and [AI Assistant](https://help.simplamo.com/features/simplamo-ai/ai-expert/aiexpert-rockdiscribe?ref=IN-926722) features.
-- Develop [Whiteboards](https://help.simplamo.com/features/whiteboard/overview?ref=IN-926722) with real-time collaboration.
-- Build and maintain the [Zalo Mini App](https://zalo.me/s/1736112917405511258/) for Simplamo with seamless integration.
-- Develop interactive chart and analytics widgets for the [Dashboard](https://help.simplamo.com/features/dashboard/overview) to enhance data visualization.
-- Develop and maintain core features to enhance functionality and user experience.
-- Ensure UI/UX consistency and adherence to standards.
-- Implement robust frontend solutions for web and mobile platforms.
-- Analyze technical capabilities and provide optimal solutions.`,
+        description: `- Designed and built 30+ production-grade websites with animation-first UX.
+- Created GSAP-powered animation systems including pinned scroll sections, parallax effects, timelines, and smooth scrolling.
+- Applied render-loop thinking for performance stability.
+- Built CMS-driven frontends using Payload CMS, WordPress, and Shopify.`,
         skills: [
           "TypeScript",
           "Next.js",
-          "React Native",
-          "MobX",
-          "MobX-State-Tree",
+          "React",
+          "GSAP",
+          "ScrollTrigger",
+          "Three.js",
+          "Payload CMS",
           "Tailwind CSS",
-          "Dify",
-          "Zalo Mini App",
-          "Agile",
-          "Teamwork",
-          "Research",
-          "Problem-solving",
+          "WordPress",
+          "Shopify",
         ],
         isExpanded: true,
       },
@@ -239,32 +233,14 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "c47f5903-88ae-4512-8a50-0b91b0cf99b6",
-        title: "Bachelor Of Science (Computer Science) - Mumbai University",
+        title: "BSc Computer Science",
         employmentPeriod: {
-          start: "08.2017",
+          start: "2017",
           end: "2020",
         },
         icon: "education",
-        description: `- 
-           Bachelor's degree in Computer Science.
-- Language Proficiency: B1 English Level.
-- Achieved several awards, including:
-  - Bronze Medal — 10th Design, Manufacturing, and Application Award 2022
-  - 2nd Prize — Business Startup Competition 2019`,
-        skills: [
-          "C++",
-          "Java",
-          "Python",
-          "Data Structures",
-          "Algorithms",
-          "Advanced Databases",
-          "Systems Design",
-          "Distributed Systems",
-          "Software Engineering",
-          "Self-learning",
-          "Teamwork",
-          "Presentation",
-        ],
+        description: `University of Mumbai | GPA: 7.1`,
+        skills: ["Computer Science", "Software Engineering"],
       },
     ],
   },

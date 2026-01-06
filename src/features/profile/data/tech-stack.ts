@@ -180,4 +180,36 @@ export const TECH_STACK: TechStack[] = [
   //   href: "https://mini.zalo.me/",
   //   categories: ["Other"],
   // },
+  {
+    key: "threejs",
+    title: "Three.js",
+    href: "https://threejs.org/",
+    categories: ["Library", "3D"],
+    theme: true,
+  },
+  {
+    key: "gsap",
+    title: "GSAP",
+    href: "https://greensock.com/gsap/",
+    categories: ["Library", "Animation"],
+  },
+  {
+    key: "payload",
+    title: "Payload CMS",
+    href: "https://payloadcms.com/",
+    categories: ["CMS"],
+    theme: true,
+  },
+  {
+    key: "webgl",
+    title: "WebGL",
+    href: "https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API",
+    categories: ["Technology"],
+  },
+  {
+    key: "blender",
+    title: "Blender",
+    href: "https://www.blender.org/",
+    categories: ["Tools", "3D"],
+  },
 ];

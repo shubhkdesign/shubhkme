@@ -19,14 +19,14 @@ export const MAIN_NAV: NavItem[] = [
     title: "ME",
     href: "/",
   },
-  {
-    title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Components",
-    href: "/components",
-  },
+  // {
+  //   title: "Blog",
+  //   href: "/blog",
+  // },
+  // {
+  //   title: "Components",
+  //   href: "/components",
+  // },
 ];
 
 export const SOURCE_CODE_GITHUB_REPO = "shubhkdesign/";

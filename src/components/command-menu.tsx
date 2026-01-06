@@ -57,16 +57,16 @@ const MENU_LINKS: CommandLinkItem[] = [
     href: "/",
     icon: ShubhKMark,
   },
-  {
-    title: "Blog",
-    href: "/blog",
-    icon: RssIcon,
-  },
-  {
-    title: "Components",
-    href: "/components",
-    icon: Icons.react,
-  },
+  // {
+  //   title: "Blog",
+  //   href: "/blog",
+  //   icon: RssIcon,
+  // },
+  // {
+  //   title: "Components",
+  //   href: "/components",
+  //   icon: Icons.react,
+  // },
 ];
 
 const SHUBHK_LINKS: CommandLinkItem[] = [
@@ -245,23 +245,23 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
 
           <CommandSeparator />
 
-          <CommandLinkGroup
+          {/* <CommandLinkGroup
             heading="Blog"
             links={blogLinks}
             fallbackIcon={TextIcon}
             onLinkSelect={handleOpenLink}
           />
 
-          <CommandSeparator />
+          <CommandSeparator /> */}
 
-          <CommandLinkGroup
+          {/* <CommandLinkGroup
             heading="Components"
             links={componentLinks}
             fallbackIcon={Icons.react}
             onLinkSelect={handleOpenLink}
           />
 
-          <CommandSeparator />
+          <CommandSeparator /> */}
 
           <CommandLinkGroup
             heading="Social Links"
