@@ -27,7 +27,7 @@ export const USER: User = {
     },
   ],
   about: `
-Frontend Engineer with 4+ years building production web applications with React, Next.js, TypeScript and Tailwind CSS. Delivered 30+ production web applications; builds with Next.js App Router, Server Components and SSR/ISR on headless CMS (Payload, Shopify). Integrates **GSAP** and **Three.js** into React component architectures while optimizing Core Web Vitals (LCP, CLS).
+Frontend Engineer with 4+ years building production web applications with React, Next.js, TypeScript and Tailwind CSS. Delivered 30+ production web applications; builds with Next.js App Router, Server Components and SSR/ISR on headless CMS (Payload, Shopify). Integrates **GSAP** and **Three.js** into React component architectures while optimizing Core Web Vitals (LCP, CLS); most client sites score 95 on Lighthouse.
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",
@@ -44,8 +44,6 @@ Frontend Engineer with 4+ years building production web applications with React,
     "Shubham Khade software engineer",
     "Frontend Engineer",
     "Photographer",
-    "Shubham Khade UI Designer",
-    "Shubham Khade UI/UX Designer",
   ],
   dateCreated: "2023-10-20", // YYYY-MM-DD
 };

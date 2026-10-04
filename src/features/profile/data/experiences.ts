@@ -18,7 +18,11 @@ export const EXPERIENCES: Experience[] = [
 - Integrated GSAP and Three.js into React component lifecycles, without hurting main-thread performance.
 - Optimized Core Web Vitals (LCP, CLS) across multiple client sites, improving SEO rankings and user retention.
 - Built reusable atomic React component libraries, speeding up delivery and keeping design consistent.
-- Designed ISR and Server Component data fetching with backend teams to integrate Payload and Shopify.`,
+- Designed ISR and Server Component data fetching with backend teams to integrate Payload and Shopify.
+- Worked in a team of three developers; most client sites score 95 on Lighthouse.
+- Took new client sites, which had no prior search presence, to indexed and ranking in Google.
+- Practiced unit testing and A/B testing.
+- Day-to-day development with supervised parallel coding agents (Claude Code, Firstmate) and an automated review and test gate (no-mistakes), with Playwright for end-to-end checks and GitHub Actions for CI.`,
         skills: [
           "TypeScript",
           "Next.js",
@@ -30,19 +34,6 @@ export const EXPERIENCES: Experience[] = [
           "Tailwind CSS",
         ],
         isExpanded: true,
-      },
-      {
-        id: "cedd7adb-4118-4085-9983-ae00530b49e2",
-        title: "UI Design Lead",
-        employmentPeriod: {
-          start: "10.2022",
-        },
-        employmentType: "Full-time",
-        icon: "design",
-        description: `- Ensure UI/UX consistency and high-quality standards.
-- Design intuitive, user-focused interfaces aligned with business goals.
-- Define and establish a cohesive UI style for Simplamo.`,
-        skills: ["Creativity", "UI/UX Design", "Figma"],
       },
     ],
     isCurrentEmployer: true,

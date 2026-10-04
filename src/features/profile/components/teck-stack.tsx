@@ -23,6 +23,10 @@ export function TeckStack() {
       >
         <ul className="flex flex-wrap gap-4 select-none">
           {TECH_STACK.map((tech) => {
+            const iconBase = tech.localIcon
+              ? "/tech-stack-icons"
+              : "https://assets.shubhk.me/images/tech-stack-icons";
+
             return (
               <li key={tech.key} className="flex">
                 <SimpleTooltip content={tech.title}>
@@ -35,7 +39,7 @@ export function TeckStack() {
                     {tech.theme ? (
                       <>
                         <Image
-                          src={`https://assets.shubhk.me/images/tech-stack-icons/${tech.key}-light.svg`}
+                          src={`${iconBase}/${tech.key}-light.svg`}
                           alt={`${tech.title} light icon`}
                           width={32}
                           height={32}
@@ -43,7 +47,7 @@ export function TeckStack() {
                           unoptimized
                         />
                         <Image
-                          src={`https://assets.shubhk.me/images/tech-stack-icons/${tech.key}-dark.svg`}
+                          src={`${iconBase}/${tech.key}-dark.svg`}
                           alt={`${tech.title} dark icon`}
                           width={32}
                           height={32}
@@ -53,7 +57,7 @@ export function TeckStack() {
                       </>
                     ) : (
                       <Image
-                        src={`https://assets.shubhk.me/images/tech-stack-icons/${tech.key}.svg`}
+                        src={`${iconBase}/${tech.key}.svg`}
                         alt={`${tech.title} icon`}
                         width={32}
                         height={32}

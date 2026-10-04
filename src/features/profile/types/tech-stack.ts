@@ -2,8 +2,9 @@
  * A technology item displayed in the Tech Stack section.
  *
  * Icon file resolution:
- * - Default: /public/tech-stack-icons/[key].svg
- * - Themed (when `theme === true`):
+ * - Remote (default): https://assets.shubhk.me/images/tech-stack-icons/[key].svg
+ * - Local (`localIcon`): /public/tech-stack-icons/[key].svg
+ * - Themed (when `theme === true`), same folder as above:
  *   - Dark:  /public/tech-stack-icons/[key]-dark.svg
  *   - Light: /public/tech-stack-icons/[key]-light.svg
  */
@@ -18,4 +19,6 @@ export type TechStack = {
   categories: string[];
   /** If true, use theme-specific icons for dark/light mode. */
   theme?: boolean;
+  /** If true, the icon is served from /public/tech-stack-icons instead of the remote asset host. */
+  localIcon?: boolean;
 };

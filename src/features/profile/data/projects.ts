@@ -7,10 +7,9 @@ export const PROJECTS: Project[] = [
     period: {
       start: "01.2023",
     },
-    link: "#",
     skills: ["Three.js", "Raycasting", "GSAP"],
     description: `
-Interaction design demo.
+Interaction design demo, built for an internal project at a private company (no public link).
 - Built a raycasting system that maps DOM events into 3D space, enabling direct object selection in the scene.
 - Solved World vs. Local space and NDC coordinate conversions, producing intuitive camera controls.
     `,
@@ -22,10 +21,9 @@ Interaction design demo.
     period: {
       start: "01.2023",
     },
-    link: "#",
     skills: ["Three.js", "WebGL", "PBR", "Shaders"],
     description: `
-Technical demo.
+Technical demo, built for an internal project at a private company (no public link).
 - Built a real-time 3D product configurator with Three.js, WebGL, PBR materials and custom shaders.
 - Optimized large texture assets for mobile devices, sustaining 60 FPS during interaction.
 - Handled complex state management across the interactive 3D configurator.
@@ -66,7 +64,6 @@ Motorcycle restoration platform, live.
     period: {
       start: "05.2022",
     },
-    link: "#",
     skills: ["Next.js", "TypeScript"],
     description: `
 - [rahgear.in](https://rahgear.in)
