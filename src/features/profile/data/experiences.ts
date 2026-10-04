@@ -8,42 +8,32 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "20f8bfe5-b6a3-4b0d-ac2f-6fccd50d417e",
-        title: "Senior Frontend Developer",
+        title: "Frontend Engineer",
         employmentPeriod: {
-          start: "10.2022",
+          start: "05.2022",
         },
         employmentType: "Full-time",
         icon: "code",
-        description: `- Designed and built 30+ production-grade websites with animation-first UX.
-- Created GSAP-powered animation systems including pinned scroll sections, parallax effects, timelines, and smooth scrolling.
-- Applied render-loop thinking for performance stability.
-- Built CMS-driven frontends using Payload CMS, WordPress, and Shopify.`,
+        description: `- Delivered 30+ production web applications with Next.js and TypeScript, keeping codebases type-safe and scalable.
+- Integrated GSAP and Three.js into React component lifecycles, without hurting main-thread performance.
+- Optimized Core Web Vitals (LCP, CLS) across multiple client sites, improving SEO rankings and user retention.
+- Built reusable atomic React component libraries, speeding up delivery and keeping design consistent.
+- Designed ISR and Server Component data fetching with backend teams to integrate Payload and Shopify.
+- Worked in a team of three developers; most client sites score 95 on Lighthouse.
+- Took new client sites, which had no prior search presence, to indexed and ranking in Google.
+- Practiced unit testing and A/B testing.
+- Day-to-day development with supervised parallel coding agents (Claude Code, Firstmate) and an automated review and test gate (no-mistakes), with Playwright for end-to-end checks and GitHub Actions for CI.`,
         skills: [
           "TypeScript",
           "Next.js",
           "React",
           "GSAP",
-          "ScrollTrigger",
           "Three.js",
           "Payload CMS",
-          "Tailwind CSS",
-          "WordPress",
           "Shopify",
+          "Tailwind CSS",
         ],
         isExpanded: true,
-      },
-      {
-        id: "cedd7adb-4118-4085-9983-ae00530b49e2",
-        title: "UI Design Lead",
-        employmentPeriod: {
-          start: "10.2022",
-        },
-        employmentType: "Full-time",
-        icon: "design",
-        description: `- Ensure UI/UX consistency and high-quality standards.
-- Design intuitive, user-focused interfaces aligned with business goals.
-- Define and establish a cohesive UI style for Simplamo.`,
-        skills: ["Creativity", "UI/UX Design", "Figma"],
       },
     ],
     isCurrentEmployer: true,

@@ -3,25 +3,15 @@ import type { Project } from "../types/projects";
 export const PROJECTS: Project[] = [
   {
     id: "interior-viewer",
-    title: "Interactive Interior / Product Viewer",
+    title: "Interactive Interior Viewer",
     period: {
       start: "01.2023",
     },
-    link: "#",
-    skills: [
-      "Three.js",
-      "TypeScript",
-      "GSAP",
-      "Vite",
-      "Raycasting",
-      "Linear Algebra",
-    ],
+    skills: ["Three.js", "Raycasting", "GSAP"],
     description: `
-**Role:** Three.js Developer
-
-- **Interaction System:** Architected a **Raycasting** system utilizing **Normalized Device Coordinates (NDC)** to map 2D DOM events to 3D precision inputs.
-- **Camera Architecture:** Implemented linear interpolation via **GSAP** to manage complex camera state transitions (Position + LookAt quaternions), creating cinematic "Director Mode" focus effects.
-- **Mobile Optimization:** Addressed mobile GPU constraints by dynamically capping \`devicePixelRatio\` and managing material precision.
+Interaction design demo, built for an internal project at a private company (no public link).
+- Built a raycasting system that maps DOM events into 3D space, enabling direct object selection in the scene.
+- Solved World vs. Local space and NDC coordinate conversions, producing intuitive camera controls.
     `,
     isExpanded: true,
   },
@@ -31,29 +21,27 @@ export const PROJECTS: Project[] = [
     period: {
       start: "01.2023",
     },
-    link: "#",
-    skills: ["Three.js", "GLSL", "WebGL", "PBR", "Post-Processing"],
+    skills: ["Three.js", "WebGL", "PBR", "Shaders"],
     description: `
-**Role:** 3D Graphics Engineer
-
-- **Visual Fidelity:** Achieved photorealism through **Physically Based Rendering (PBR)** workflows, utilizing **HDRI** environment maps and custom material properties (Clearcoat, Transmission).
-- **Post-Processing Pipeline:** Implemented a custom rendering pipeline with **Bloom**, **Tone Mapping** (ACESFilmic), and **Depth of Field** to simulate cinematic camera lenses.
-- **Performance:** Optimized high-poly automotive assets using **Draco compression** and implemented texture atlas techniques to reduce draw calls.
+Technical demo, built for an internal project at a private company (no public link).
+- Built a real-time 3D product configurator with Three.js, WebGL, PBR materials and custom shaders.
+- Optimized large texture assets for mobile devices, sustaining 60 FPS during interaction.
+- Handled complex state management across the interactive 3D configurator.
     `,
     isExpanded: true,
   },
   {
     id: "studio-rare",
-    title: "Studio Rare Interiors",
+    title: "Studio Rare Design Website",
     period: {
       start: "01.2024",
     },
-    link: "#",
-    skills: ["GSAP", "ScrollTrigger", "Animation", "UI/UX"],
+    link: "https://studioraredesign.com",
+    skills: ["GSAP", "Leaflet", "Payload CMS"],
     description: `
-(Under Development)
-- High-end interior design website focused on immersive scroll storytelling.
-- 8+ animated sections with multi-phase GSAP timelines, spotlight carousels, and 3D perspective card stacks.
+- Built 8+ animated sections and a responsive marquee with GSAP multi-phase timelines and 3D card stacks.
+- Integrated an interactive Leaflet map with custom pulsing pins.
+- Extended Payload CMS global schemas, making site content editable without code changes.
     `,
   },
   {
@@ -63,9 +51,28 @@ export const PROJECTS: Project[] = [
       start: "01.2023",
     },
     link: "https://yc-design.in",
-    skills: ["Payload CMS", "Next.js", "ISR", "Full Stack"],
+    skills: ["Payload CMS", "Next.js", "ISR", "GSAP"],
     description: `
-CMS-driven motorcycle restoration platform with Payload CMS integration and ISR-based updates.
+Motorcycle restoration platform, live.
+- Served dynamic content via Next.js ISR and Payload CMS, keeping CMS-driven pages high-performance.
+- Engineered a custom animation orchestrator with GSAP to coordinate the site's animations.
+    `,
+  },
+  {
+    id: "notable-deployments",
+    title: "Notable Production Deployments",
+    period: {
+      start: "05.2022",
+    },
+    skills: ["Next.js", "TypeScript"],
+    description: `
+- [rahgear.in](https://rahgear.in)
+- [sillyowl.in](https://sillyowl.in)
+- [uptantra.com](https://uptantra.com)
+- [bachoomotors.com](https://bachoomotors.com)
+- [arihanthelmets.com](https://arihanthelmets.com)
+- [quickwayslogistics.in](https://quickwayslogistics.in)
+- [bombaycustomworks.com](https://bombaycustomworks.com)
     `,
   },
   //   {

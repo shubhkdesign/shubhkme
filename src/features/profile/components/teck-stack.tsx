@@ -21,10 +21,14 @@ export function TeckStack() {
           "bg-zinc-950/0.75 dark:bg-white/0.75"
         )}
       >
-        <ul className="flex flex-wrap gap-4 select-none">
+        <ul className="grid grid-cols-[repeat(auto-fill,2rem)] gap-4 select-none">
           {TECH_STACK.map((tech) => {
+            const iconBase = tech.localIcon
+              ? "/tech-stack-icons"
+              : "https://assets.shubhk.me/images/tech-stack-icons";
+
             return (
-              <li key={tech.key} className="flex">
+              <li key={tech.key} className="flex size-8">
                 <SimpleTooltip content={tech.title}>
                   <a
                     href={tech.href}
@@ -35,28 +39,29 @@ export function TeckStack() {
                     {tech.theme ? (
                       <>
                         <Image
-                          src={`https://assets.shubhk.me/images/tech-stack-icons/${tech.key}-light.svg`}
+                          src={`${iconBase}/${tech.key}-light.svg`}
                           alt={`${tech.title} light icon`}
                           width={32}
                           height={32}
-                          className="hidden [html.light_&]:block"
+                          className="hidden size-8 object-contain [html.light_&]:block"
                           unoptimized
                         />
                         <Image
-                          src={`https://assets.shubhk.me/images/tech-stack-icons/${tech.key}-dark.svg`}
+                          src={`${iconBase}/${tech.key}-dark.svg`}
                           alt={`${tech.title} dark icon`}
                           width={32}
                           height={32}
-                          className="hidden [html.dark_&]:block"
+                          className="hidden size-8 object-contain [html.dark_&]:block"
                           unoptimized
                         />
                       </>
                     ) : (
                       <Image
-                        src={`https://assets.shubhk.me/images/tech-stack-icons/${tech.key}.svg`}
+                        src={`${iconBase}/${tech.key}.svg`}
                         alt={`${tech.title} icon`}
                         width={32}
                         height={32}
+                        className="size-8 object-contain"
                         unoptimized
                       />
                     )}
