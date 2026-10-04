@@ -66,6 +66,8 @@ function ThemeSwitcher() {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    // Mount flag keeps the server and first client render identical (public/r mirrors this file).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMounted(true);
   }, []);
 
