@@ -137,6 +137,11 @@ const components: MDXRemoteProps["components"] = {
 };
 
 const options: MDXRemoteProps["options"] = {
+  // next-mdx-remote 6 strips JS expressions by default. The posts (repo-owned, trusted)
+  // use literal props such as notProse={false} and collapsible={false}, so expressions
+  // stay enabled. blockDangerousJS stays at its default (true), which still blocks
+  // eval, Function, process, require and similar globals.
+  blockJS: false,
   mdxOptions: {
     remarkPlugins: [remarkGfm, remarkCodeImport],
     rehypePlugins: [
