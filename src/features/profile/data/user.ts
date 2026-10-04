@@ -7,7 +7,7 @@ export const USER: User = {
   username: "shubhkdesign",
   gender: "male",
   pronouns: "he/him",
-  bio: "Front-End Developer | 3D & Animation-Focused (GSAP / Three.js)",
+  bio: "Frontend Engineer | React, Next.js, TypeScript, Tailwind CSS",
   flipSentences: [
     "Creating with code. Small details matter.",
     "Frontend Engineer",
@@ -15,19 +15,19 @@ export const USER: User = {
     "Photographer",
   ],
   address: "Mumbai, India",
-  phoneNumber: "KzkxIDcwMjEgMTMzIDk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  phoneNumber: "KzkxNzAyMTEzMzk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "c2h1YmhrZGVzaWduQGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://shubhk.me",
-  jobTitle: "Front-End Developer",
+  jobTitle: "Frontend Engineer",
   jobs: [
     {
-      title: "Frontend Developer & UI Designer",
+      title: "Frontend Engineer",
       company: "Inline 3 Media Solutions",
       website: "https://inline3.media",
     },
   ],
   about: `
-Front-end developer with 3+ years of professional experience building animation-driven, performance-optimized web applications using Next.js, React, TypeScript, Tailwind CSS, and GSAP. Specialized in complex scroll-based animation systems, real-time interaction patterns, and CMS-driven architectures using Payload CMS. Strong understanding of render loops, animation timelines, performance trade-offs, and lifecycle management. Actively extending this foundation into **Three.js** and 3D web visualization for design, automotive, and visualization-focused domains.
+Frontend Engineer with 4+ years building production web applications with React, Next.js, TypeScript and Tailwind CSS. Delivered 30+ production web applications; builds with Next.js App Router, Server Components and SSR/ISR on headless CMS (Payload, Shopify). Integrates **GSAP** and **Three.js** into React component architectures while optimizing Core Web Vitals (LCP, CLS).
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",
@@ -51,7 +51,7 @@ Front-end developer with 3+ years of professional experience building animation-
 };
 // Hello, World! I am Shubham Khade — a Frontend Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
 
-// With 3+ years of experience, I specialize in building high-quality web applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
+// With 4+ years of experience, I specialize in building high-quality web applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
 
 // One of my key projects, [Project Name](https://project.com), ...
 

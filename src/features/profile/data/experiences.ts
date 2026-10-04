@@ -8,27 +8,26 @@ export const EXPERIENCES: Experience[] = [
     positions: [
       {
         id: "20f8bfe5-b6a3-4b0d-ac2f-6fccd50d417e",
-        title: "Senior Frontend Developer",
+        title: "Frontend Engineer",
         employmentPeriod: {
-          start: "10.2022",
+          start: "05.2022",
         },
         employmentType: "Full-time",
         icon: "code",
-        description: `- Designed and built 30+ production-grade websites with animation-first UX.
-- Created GSAP-powered animation systems including pinned scroll sections, parallax effects, timelines, and smooth scrolling.
-- Applied render-loop thinking for performance stability.
-- Built CMS-driven frontends using Payload CMS, WordPress, and Shopify.`,
+        description: `- Delivered 30+ production web applications with Next.js and TypeScript, keeping codebases type-safe and scalable.
+- Integrated GSAP and Three.js into React component lifecycles, without hurting main-thread performance.
+- Optimized Core Web Vitals (LCP, CLS) across multiple client sites, improving SEO rankings and user retention.
+- Built reusable atomic React component libraries, speeding up delivery and keeping design consistent.
+- Designed ISR and Server Component data fetching with backend teams to integrate Payload and Shopify.`,
         skills: [
           "TypeScript",
           "Next.js",
           "React",
           "GSAP",
-          "ScrollTrigger",
           "Three.js",
           "Payload CMS",
-          "Tailwind CSS",
-          "WordPress",
           "Shopify",
+          "Tailwind CSS",
         ],
         isExpanded: true,
       },
