@@ -19,40 +19,8 @@ export const PROJECTS: Project[] = [
     ],
     description: `
 Shopify App Store app that lets Indian D2C merchants take an advance or a fee on cash-on-delivery orders to cut fake orders. Live on the [Shopify App Store](https://apps.shopify.com/upfront-cod-partial-payment-1) with 233 installs; product site at [upfrontpayapp.com](https://upfrontpayapp.com).
-- Built from scratch, then re-architected on checkout-native Shopify Functions with an event-driven BullMQ and Redis worker.
+- Built from scratch, then re-architected for scale: pricing moved into checkout-native Shopify Functions running on Shopify's infrastructure, with an event-driven BullMQ and Redis queue running webhooks as idempotent jobs.
 - Dark-launched against version 1: 0 pricing differences across 171,000+ shadow-checked quotes.
-    `,
-    isExpanded: true,
-  },
-  {
-    id: "ai-scheduling-assistant",
-    title: "AI Scheduling Assistant",
-    skills: ["Gemini 2.5", "LLM", "Streaming Chat", "Cal.com API"],
-    description: `
-Chatbot for a chartered accountancy firm that automates client scheduling.
-- Built an LLM chatbot on Gemini 2.5, chosen as a fast low-reasoning model, with streaming chat.
-- It checks live availability through the Cal.com API and books a free slot or reschedules an existing meeting.
-    `,
-    isExpanded: true,
-  },
-  {
-    id: "stock-bhandar",
-    title: "Stock Bhandar",
-    period: { start: "09.2026", end: "09.2026" },
-    skills: [
-      "Next.js 16",
-      "PostgreSQL",
-      "Drizzle",
-      "PWA",
-      "IndexedDB",
-      "Vitest",
-      "Playwright",
-    ],
-    description: `
-Offline-first billing, inventory and GST software for small Indian retailers (not publicly listed yet).
-- Multi-tenant SaaS with authentication, role-based access control, plans and subscriptions, and an offline-first PWA point of sale with service-worker caching and IndexedDB sync.
-- GST tax engine, invoices, barcode labels, purchase orders and GSTR-1 and GSTR-3B exports, covered by 1,000+ Vitest tests and 29 Playwright E2E specs.
-- Now architecting AI stock monitoring and automated reordering (planned, not built yet).
     `,
     isExpanded: true,
   },
@@ -65,28 +33,6 @@ Offline-first billing, inventory and GST software for small Indian retailers (no
     skills: ["Next.js 16", "Payload CMS", "MongoDB", "Cloudflare R2", "GSAP"],
     description: `
 Website and CMS for a Mumbai creative production studio, with a [web and software development section](https://inline3media.com/web) and its client case studies.
-    `,
-  },
-  {
-    id: "pal-india",
-    title: "Pal India",
-    period: { start: "2026", end: "2026" },
-    link: "https://palindia.biz",
-    image: "/projects/pal-india.webp",
-    skills: ["Vite", "Static Site", "SEO", "Cloudflare Pages"],
-    description: `
-Single-page marketing site for a century-old Mumbai shipping and logistics group, built as a fast, SEO-ready static site.
-    `,
-  },
-  {
-    id: "rouse-open-studio",
-    title: "Rouse Open Studio",
-    period: { start: "2026", end: "2026" },
-    link: "https://rouseopenstudio.in",
-    image: "/projects/rouse.webp",
-    skills: ["Next.js", "Payload CMS", "GSAP", "Leaflet"],
-    description: `
-Portfolio site for an architecture and design studio, with a full-viewport video hero, scroll-driven GSAP timelines and CMS-managed projects and workshops.
     `,
   },
   {
@@ -104,14 +50,14 @@ Interior design studio website with one filtered portfolio for residential and c
     `,
   },
   {
-    id: "studio-11",
-    title: "Studio 11",
-    period: { start: "2025", end: "2025" },
-    link: "https://studio11.in",
-    image: "/projects/studio11.webp",
-    skills: ["Next.js", "GSAP"],
+    id: "rouse-open-studio",
+    title: "Rouse Open Studio",
+    period: { start: "2026", end: "2026" },
+    link: "https://rouseopenstudio.in",
+    image: "/projects/rouse.webp",
+    skills: ["Next.js", "Payload CMS", "GSAP", "Leaflet"],
     description: `
-Interior design practice site that opens like a pair of curtains on scroll, followed by stacked, pinned project cards.
+Portfolio site for an architecture and design studio, with a full-viewport video hero, scroll-driven GSAP timelines and CMS-managed projects and workshops.
     `,
   },
   {
@@ -128,6 +74,17 @@ Motorcycle restoration studio in Mumbai, with a restoration archive filtered by 
     `,
   },
   {
+    id: "studio-11",
+    title: "Studio 11",
+    period: { start: "2025", end: "2025" },
+    link: "https://studio11.in",
+    image: "/projects/studio11.webp",
+    skills: ["Next.js", "GSAP"],
+    description: `
+Interior design practice site that opens like a pair of curtains on scroll, followed by stacked, pinned project cards.
+    `,
+  },
+  {
     id: "electromech",
     title: "Electromech Air Circulators",
     period: { start: "2025", end: "2025" },
@@ -139,6 +96,17 @@ Product catalogue for an industrial fan manufacturer, with each fan listed by sw
     `,
   },
   {
+    id: "pal-india",
+    title: "Pal India",
+    period: { start: "2026", end: "2026" },
+    link: "https://palindia.biz",
+    image: "/projects/pal-india.webp",
+    skills: ["Vite", "Static Site", "SEO", "Cloudflare Pages"],
+    description: `
+Single-page marketing site for a century-old Mumbai shipping and logistics group, built as a fast, SEO-ready static site.
+    `,
+  },
+  {
     id: "quickways-logistics",
     title: "Quick Ways Logistics",
     period: { start: "2025", end: "2025" },
@@ -147,6 +115,14 @@ Product catalogue for an industrial fan manufacturer, with each fan listed by sw
     skills: ["Tailwind CSS", "Landing Page"],
     description: `
 One-page website for an air and sea freight forwarder, built around a single call to action: get a quote.
+    `,
+  },
+  {
+    id: "motorcycle-3d-viewer",
+    title: "3D Motorcycle Viewer",
+    skills: ["Three.js", "Next.js", "3D Scene"],
+    description: `
+Internal client project: an interactive Three.js scene for viewing 3D motorcycles.
     `,
   },
   {
@@ -192,5 +168,43 @@ Shopify store for a multi-brand helmet retailer with a 380+ helmet catalogue, fi
     description: `
 Shopify store for a motorcycle gear and spare parts shop, with navigation organised like the shop's own shelves.
     `,
+  },
+  {
+    id: "ai-scheduling-assistant",
+    title: "AI Scheduling Assistant",
+    skills: [
+      "Gemini 2.5 Flash",
+      "LLM Tool Calling",
+      "Guardrails",
+      "Streaming Chat",
+      "Cal.com API",
+    ],
+    description: `
+Chatbot, live on a chartered accountancy firm's website, that automates client scheduling.
+- Books a free slot or reschedules an existing meeting through Cal.com tool calling, checking live availability first.
+- Streams Gemini 2.5 Flash replies with a Flash-Lite fallback, and scheduling-only guardrails so it cannot be asked to do anything else.
+    `,
+    isExpanded: true,
+  },
+  {
+    id: "stock-bhandar",
+    title: "Stock Bhandar",
+    period: { start: "09.2026", end: "09.2026" },
+    skills: [
+      "Next.js 16",
+      "PostgreSQL",
+      "Drizzle",
+      "PWA",
+      "IndexedDB",
+      "Vitest",
+      "Playwright",
+    ],
+    description: `
+Offline-first billing, inventory and GST software for small Indian retailers (not publicly listed yet).
+- Scalable multi-tenant B2B SaaS with authentication, role-based access control, plans and subscriptions, and an offline-first PWA point of sale with service-worker caching and IndexedDB sync.
+- GST tax engine, invoices, barcode labels, purchase orders and GSTR-1 and GSTR-3B exports, covered by 1,000+ Vitest tests and 29 Playwright E2E specs.
+- Now architecting AI stock monitoring and automated reordering (planned, not built yet).
+    `,
+    isExpanded: true,
   },
 ];

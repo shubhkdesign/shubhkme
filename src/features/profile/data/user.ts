@@ -32,7 +32,7 @@ Senior full-stack software engineer with 5+ years shipping scalable web products
 
 Built a [Shopify App Store app](https://apps.shopify.com/upfront-cod-partial-payment-1) from scratch to 233 installs and re-architected it on Shopify Functions with 0 pricing differences across 171,000+ shadow-checked quotes.
 
-Lead a team in Agile sprints and work directly with clients and designers. Build with AI tools (Claude Code, MCP, Gemini 2.5) and ship LLM features such as streaming chat.
+Lead the web team in Agile sprints and work directly with clients and designers. Build with Claude Code and MCP (Railway, AWS) and ship LLM features such as a Gemini 2.5 Flash scheduling chatbot with tool calling and guardrails.
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",
