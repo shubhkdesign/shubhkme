@@ -4,7 +4,6 @@ dotenv.config({ path: ".env.local" });
 import { put } from "@vercel/blob";
 import fs from "fs";
 import { glob } from "glob";
-import path from "path";
 
 // Configuration
 const OLD_ASSET_DOMAIN = "https://assets.chanhdai.com";

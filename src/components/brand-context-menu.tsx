@@ -54,13 +54,6 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
             Brand Guidelines
           </Link>
         </ContextMenuItem>
-
-        {/* <ContextMenuItem asChild>
-          <a href="https://assets.shubhk.me/shubhk-brand.zip" download>
-            <DownloadIcon />
-            Download Brand Assets
-          </a>
-        </ContextMenuItem> */}
       </ContextMenuContent>
     </ContextMenu>
   );

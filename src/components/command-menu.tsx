@@ -6,12 +6,9 @@ import {
   BriefcaseBusinessIcon,
   CircleUserIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
   SunIcon,
-  TextIcon,
   TriangleDashedIcon,
   TypeIcon,
 } from "lucide-react";
@@ -175,6 +172,8 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [setTheme]
   );
 
+  // Blog and component links are parked until the blog section is enabled.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { blogLinks, componentLinks } = useMemo(
     () => ({
       blogLinks: posts
@@ -299,13 +298,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             <CommandItem onSelect={() => handleOpenLink("/blog/shubhk-brand")}>
               <TriangleDashedIcon />
               Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.shubhk.me/shubhk-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
             </CommandItem>
           </CommandGroup>
 

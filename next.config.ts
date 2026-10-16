@@ -3,7 +3,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["chanhdai-macbook.local"],
   devIndicators: false,
   images: {
     remotePatterns: [
@@ -35,10 +34,6 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/blog/:slug.mdx",
-        destination: "/blog.mdx/:slug",
-      },
-      {
-        source: "/components/:slug.mdx",
         destination: "/blog.mdx/:slug",
       },
     ];

@@ -29,8 +29,9 @@ export function ProjectItem({
   className?: string;
   project: Project;
 }) {
-  const { start, end } = project.period;
+  const { start, end } = project.period ?? {};
   const isOngoing = !end;
+  const isSingleDate = end === start;
 
   return (
     <Collapsible defaultOpen={project.isExpanded} asChild>
@@ -63,24 +64,26 @@ export function ProjectItem({
                   {project.title}
                 </h3>
 
-                <dl className="text-sm text-muted-foreground">
-                  <dt className="sr-only">Period</dt>
-                  <dd className="flex items-center gap-0.5">
-                    <span>{start}</span>
-                    <span className="font-mono">—</span>
-                    {isOngoing ? (
-                      <>
-                        <InfinityIcon
-                          className="size-4.5 translate-y-[0.5px]"
-                          aria-hidden
-                        />
-                        <span className="sr-only">Present</span>
-                      </>
-                    ) : (
-                      <span>{end}</span>
-                    )}
-                  </dd>
-                </dl>
+                {project.period && (
+                  <dl className="text-sm text-muted-foreground">
+                    <dt className="sr-only">Period</dt>
+                    <dd className="flex items-center gap-0.5">
+                      <span>{start}</span>
+                      {!isSingleDate && <span className="font-mono">—</span>}
+                      {isSingleDate ? null : isOngoing ? (
+                        <>
+                          <InfinityIcon
+                            className="size-4.5 translate-y-[0.5px]"
+                            aria-hidden
+                          />
+                          <span className="sr-only">Present</span>
+                        </>
+                      ) : (
+                        <span>{end}</span>
+                      )}
+                    </dd>
+                  </dl>
+                )}
               </div>
 
               {project.link && (
@@ -110,6 +113,17 @@ export function ProjectItem({
 
         <CollapsibleContent className="overflow-hidden duration-300 data-[state=closed]:animate-collapsible-up data-[state=open]:animate-collapsible-down">
           <div className="space-y-4 border-t border-dashed border-edge p-4">
+            {project.image && (
+              <Image
+                src={project.image}
+                alt={`Screenshot of ${project.title}`}
+                width={1200}
+                height={592}
+                sizes="(min-width: 768px) 700px, 100vw"
+                className="w-full rounded-lg border border-edge"
+              />
+            )}
+
             {project.description && (
               <Prose>
                 <Markdown>{project.description}</Markdown>

@@ -15,8 +15,8 @@ Ensure you have the following installed:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/ncdai/chanhdai.com.git minimal-portfolio
-cd minimal-portfolio
+git clone https://github.com/shubhkdesign/shubhkme.git
+cd shubhkme
 ```
 
 ### 2. Install dependencies
@@ -64,12 +64,12 @@ This project utilizes **shadcn Registry**, which allows you to manage and distri
 If you're working on a different React project and want to reuse the custom components from this repository, you can add them using the **shadcn CLI** with the following commands:
 
 ```bash
-npx shadcn@latest add @ncdai/utils
-npx shadcn@latest add @ncdai/theme-switcher
-npx shadcn@latest add @ncdai/flip-sentences
-npx shadcn@latest add @ncdai/apple-hello-effect
-npx shadcn@latest add @ncdai/wheel-picker
-npx shadcn@latest add @ncdai/use-controllable-state
+npx shadcn@latest add https://shubhk.me/r/utils.json
+npx shadcn@latest add https://shubhk.me/r/theme-switcher.json
+npx shadcn@latest add https://shubhk.me/r/flip-sentences.json
+npx shadcn@latest add https://shubhk.me/r/apple-hello-effect.json
+npx shadcn@latest add https://shubhk.me/r/wheel-picker.json
+npx shadcn@latest add https://shubhk.me/r/use-controllable-state.json
 ```
 
 > Note: These components are compatible with [Tailwind CSS v4](https://tailwindcss.com/blog/tailwindcss-v4) and [React 19](https://react.dev/blog/2024/12/05/react-19).

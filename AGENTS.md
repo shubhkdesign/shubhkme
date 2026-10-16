@@ -1,12 +1,12 @@
-# AI Agent Guidelines for chanhdai.com
+# AI Agent Guidelines for shubhk.me
 
-This guide provides essential information for AI agents working with the chanhdai.com codebase - a Next.js portfolio, blog, and component registry website.
+This guide provides essential information for AI agents working with the shubhk.me codebase - a Next.js portfolio, blog, and component registry website.
 
 ## Project Overview
 
-**chanhdai.com** is a minimal portfolio, component registry, and blog built with modern web technologies. It serves as:
+**shubhk.me** is a minimal portfolio, component registry, and blog built with modern web technologies. It serves as:
 
-- Personal portfolio for Nguyen Chanh Dai (@ncdai)
+- Personal portfolio for Shubham Khade (@shubhkdesign)
 - Component registry using shadcn/ui system
 - Blog with MDX content
 - Showcase for custom React components

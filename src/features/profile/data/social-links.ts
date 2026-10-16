@@ -20,21 +20,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://x.com/chubhu10",
   },
   {
-    icon: "https://assets.shubhk.me/images/link-icons/liquid-glass/behance.webp",
+    icon: "/behance.webp",
     title: "Behance",
     description: "@shubhkhade",
     href: "https://www.behance.net/shubhkhade",
   },
-  // {
-  //   icon: "https://assets.shubhk.me/images/link-icons/liquid-glass/zalo.webp",
-  //   title: "Zalo",
-  //   description: "Quaric",
-  //   href: "https://zalo.me/2353934240045322830",
-  // },
-  // {
-  //   icon: "https://assets.shubhk.me/images/link-icons/liquid-glass/youtube.webp",
-  //   title: "YouTube",
-  //   description: "@ncdai",
-  //   href: "https://www.youtube.com/@ncdai",
-  // },
 ];

@@ -14,9 +14,9 @@ export type User = {
   flipSentences: string[];
   /** General location for display */
   address: string;
-  /** E.164 format, base64 encoded (https://t.io.vn/base64-string-converter) */
+  /** E.164 format, base64 encoded */
   phoneNumber: string;
-  /** base64 encoded (https://t.io.vn/base64-string-converter) */
+  /** base64 encoded */
   email: string;
   /** Personal/homepage URL */
   website: string;

@@ -4,233 +4,85 @@ export const EXPERIENCES: Experience[] = [
   {
     id: "inline3",
     companyName: "Inline 3 Media Solutions",
-    companyLogo: "/Inline3White.png",
+    companyLogo: "/inline3-mark.png",
     positions: [
       {
         id: "20f8bfe5-b6a3-4b0d-ac2f-6fccd50d417e",
-        title: "Frontend Engineer",
+        title: "Senior Full-Stack Engineer",
         employmentPeriod: {
           start: "05.2022",
         },
         employmentType: "Full-time",
         icon: "code",
-        description: `- Delivered 30+ production web applications with Next.js and TypeScript, keeping codebases type-safe and scalable.
-- Integrated GSAP and Three.js into React component lifecycles, without hurting main-thread performance.
-- Optimized Core Web Vitals (LCP, CLS) across multiple client sites, improving SEO rankings and user retention.
-- Built reusable atomic React component libraries, speeding up delivery and keeping design consistent.
-- Designed ISR and Server Component data fetching with backend teams to integrate Payload and Shopify.
-- Worked in a team of three developers; most client sites score 95 on Lighthouse.
-- Took new client sites, which had no prior search presence, to indexed and ranking in Google.
-- Practiced unit testing and A/B testing.
-- Day-to-day development with supervised parallel coding agents (Claude Code, Firstmate) and an automated review and test gate (no-mistakes), with Playwright for end-to-end checks and GitHub Actions for CI.`,
+        description: `- Lead the web development team of a Mumbai creative studio in 15-day Agile sprints, planning and assigning work in Jira; communicate directly with clients and collaborate with designers, building from Figma designs.
+- Use AI coding tools (Claude Code, MCP) daily, with specs, code review and automated tests on every change.
+
+**[Upfront: COD & Partial Payment](https://apps.shopify.com/upfront-cod-partial-payment-1)** - Shopify App Store payments app
+
+- Built Upfront version 1 from scratch and launched it in Mar 2026; it lets Indian D2C merchants take an advance or fee on COD orders to cut fake orders: 233 installs, 744 paid advance orders across 33 stores in the past month.
+- Re-architected it as version 2 on checkout-native Shopify Functions, PostgreSQL database design with Prisma migrations and an event-driven BullMQ/Redis worker for idempotent background jobs.
+- Dark-launched it: shadow-priced 171,000+ live quotes against version 1 with 0 differences, replayed 30 days of paid orders, then released behind per-store feature flags with backups, rollback plans and 48-hour production monitoring.
+- Led launch-week incident response: hotfixed an API rate-limit failure (quote errors 218 to 0) and an uninstall bug.
+- Built usage-based billing and third-party SMS and WhatsApp OTP integrations behind feature flags; GitHub Actions CI runs security audits, lint, type checks and 5,800+ Vitest tests on releases; Playwright E2E on staging.
+
+**Client websites and stores**
+
+- Delivered sites, CMS platforms and Shopify e-commerce stores for 13 client brands ([studioraredesign.com](https://studioraredesign.com), [rouseopenstudio.in](https://rouseopenstudio.in), [yc-design.in](https://yc-design.in), [rahgear.in](https://rahgear.in)), with GSAP, Three.js and Leaflet interfaces and custom Liquid themes.
+- Built Next.js sites on Payload CMS, MongoDB and Cloudflare R2 with editable pages, SEO fields, redirects and sitemaps; deployed on AWS (EC2, Lightsail, S3, Lambda) and Vercel; most score 95 on Lighthouse.`,
         skills: [
           "TypeScript",
           "Next.js",
           "React",
+          "Node.js",
+          "Shopify Functions",
+          "PostgreSQL",
+          "Prisma",
+          "BullMQ",
+          "Redis",
+          "Payload CMS",
+          "AWS",
           "GSAP",
           "Three.js",
-          "Payload CMS",
-          "Shopify",
-          "Tailwind CSS",
+          "Playwright",
+          "Claude Code",
+          "MCP",
         ],
         isExpanded: true,
       },
     ],
     isCurrentEmployer: true,
   },
-  //   {
-  //     id: "quaric",
-  //     companyName: "Quaric Co., Ltd.",
-  //     companyLogo: "https://assets.shubhk.me/images/companies/quaric.svg",
-  //     positions: [
-  //       {
-  //         id: "30d3a9fb-021d-452a-9d27-83655369b4b9",
-  //         title: "Design Engineer",
-  //         employmentPeriod: {
-  //           start: "03.2024",
-  //         },
-  //         employmentType: "Part-time",
-  //         icon: "code",
-  //         description: `- Created Quaric Brand Identity.
-  // - Created the Quaric Design System to standardize design practices and accelerate development.
-
-  // In-house Project: [Quaric Website](https://quaric.com)
-  // - Designed the UI/UX for Quaric Website, delivering a seamless experience.
-  // - Developed online ordering to streamline purchases.
-  // - Integrated VNPAY-QR for secure transactions.
-  // - Registered the e-commerce site with [online.gov.vn](http://online.gov.vn/website/chi-tiet-115855) for compliance.
-
-  // In-house Project: [ZaDark](https://zadark.com)
-  // - Build and maintain ZaDark.com with Docusaurus, integrating AdSense.
-  // - Develop and maintain the ZaDark extension for Zalo Web on Chrome, Safari, Edge, and Firefox — with 15,000+ active users via Chrome Web Store.`,
-  //         skills: [
-  //           "Next.js",
-  //           "Strapi",
-  //           "Auth0",
-  //           "VNPAY-QR",
-  //           "Docker",
-  //           "NGINX",
-  //           "Google Cloud",
-  //           "Docusaurus",
-  //           "Extension",
-  //           "UI/UX Design",
-  //           "UX Writing",
-  //           "Design System",
-  //           "Brand Design",
-  //           "Figma",
-  //           "Research",
-  //         ],
-  //         isExpanded: true,
-  //       },
-  //       {
-  //         id: "991692c4-7d02-4666-8d31-933c4831768d",
-  //         title: "Founder & Director",
-  //         employmentPeriod: {
-  //           start: "03.2024",
-  //         },
-  //         employmentType: "Part-time",
-  //         icon: "idea",
-  //         description: `- Lead and manage the company's strategy.
-  // - Oversee technical teams and product development.
-  // - Manage relationships with customers and partners.`,
-  //         skills: ["Business Ownership", "Business Law", "Business Tax"],
-  //       },
-  //     ],
-  //     isCurrentEmployer: true,
-  //   },
-  //   {
-  //     id: "tungtung",
-  //     companyName: "Tung Tung JSC",
-  //     companyLogo: "https://assets.shubhk.me/images/companies/tungtung.webp",
-  //     positions: [
-  //       {
-  //         id: "3e831244-8d8c-41e2-b2ce-7f3946956afd",
-  //         title: "Web Developer",
-  //         employmentPeriod: {
-  //           start: "2020",
-  //           end: "2022",
-  //         },
-  //         employmentType: "Full-time",
-  //         description: `- Built a scalable design system for consistency and efficiency.
-  // - Built a complex rich-text editor based on ProseMirror and Slate for customizable content creation.
-  // - Integrated APIs with the Backend Team to enhance functionality.`,
-  //         icon: "code",
-  //         skills: [
-  //           "React",
-  //           "Redux",
-  //           "Storybook",
-  //           "Lerna",
-  //           "Agile",
-  //           "Teamwork",
-  //           "Research",
-  //         ],
-  //       },
-  //       {
-  //         id: "13bd34c3-db84-4fad-8132-a6c89a42957e",
-  //         title: "Mobile Developer",
-  //         employmentPeriod: {
-  //           start: "2019",
-  //           end: "2020",
-  //         },
-  //         employmentType: "Full-time",
-  //         description: `- Rebuilt the app with React Native for better UX and performance.
-  // - Integrated MoMo and in-app purchases for seamless payments.
-  // - Optimized deployment for staging and production.
-  // - Published on App Store and Google Play, ensuring compliance.`,
-  //         icon: "code",
-  //         skills: [
-  //           "React Native",
-  //           "Redux",
-  //           "MoMo Payment API",
-  //           "App Store",
-  //           "Google Play Store",
-  //           "App Center",
-  //           "Agile",
-  //           "Teamwork",
-  //           "Research",
-  //         ],
-  //       },
-  //       {
-  //         id: "73151add-7adf-4035-a237-b5803ceb5478",
-  //         title: "UI/UX Designer",
-  //         employmentPeriod: {
-  //           start: "2018",
-  //           end: "2019",
-  //         },
-  //         employmentType: "Full-time",
-  //         description: `- Designed a Landing Page for enterprise clients.
-  // - Redesigned the Online Quiz Platform for a modern look on web and mobile.
-  // - Redesigned the Pricing interface for individual customers.
-  // - Enhanced UX by improving usability, navigation, and user flow.`,
-  //         icon: "design",
-  //         skills: ["UI/UX Design", "Sketch"],
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     id: "freelance",
-  //     companyName: "Freelance",
-  //     positions: [
-  //       {
-  //         id: "f0becfba-057d-40db-b252-739e1654faa1",
-  //         title: "Full-stack Developer",
-  //         employmentPeriod: {
-  //           start: "2018",
-  //           end: "2020",
-  //         },
-  //         employmentType: "Part-time",
-  //         description: `- Built an order management website with real-time delivery tracking.
-  // - Developed an e-commerce site for bird's nest products.
-  // - Created a map to display monitoring station data.
-  // - Designed a customizable WordPress landing page.`,
-  //         icon: "code",
-  //         skills: [
-  //           "Laravel",
-  //           "React",
-  //           "Express.js",
-  //           "Socket.IO",
-  //           "MongoDB",
-  //           "Firebase",
-  //           "WordPress",
-  //           "Docker",
-  //           "NGINX",
-  //         ],
-  //       },
-  //       {
-  //         id: "0eecdfcb-028d-41f4-93e9-1269ba7eff7e",
-  //         title: "Graphic & UI/UX Designer",
-  //         employmentPeriod: {
-  //           start: "2018",
-  //           end: "2019",
-  //         },
-  //         employmentType: "Part-time",
-  //         description: "Designed logos, posters, ads, and UI.",
-  //         icon: "design",
-  //         skills: [
-  //           "Creativity",
-  //           "UI/UX Design",
-  //           "Graphic Design",
-  //           "Sketch",
-  //           "Adobe Photoshop",
-  //           "Adobe Illustrator",
-  //         ],
-  //       },
-  //     ],
-  //   },
+  {
+    id: "farintsol",
+    companyName: "Farintsol",
+    positions: [
+      {
+        id: "6d1b0f6e-4a43-4f52-9a5e-7d5f0c8f2b11",
+        title: "Frontend Developer",
+        employmentPeriod: {
+          start: "12.2020",
+          end: "12.2021",
+        },
+        icon: "code",
+        description: `- Built responsive client websites on WordPress and static HTML, CSS and JavaScript templates.`,
+        skills: ["WordPress", "HTML", "CSS", "JavaScript"],
+        isExpanded: true,
+      },
+    ],
+  },
   {
     id: "education",
     companyName: "Education",
     positions: [
       {
         id: "c47f5903-88ae-4512-8a50-0b91b0cf99b6",
-        title: "BSc Computer Science",
+        title: "Bachelor of Science (BSc) in Computer Science",
         employmentPeriod: {
           start: "2017",
           end: "2020",
         },
         icon: "education",
-        description: `University of Mumbai | GPA: 7.1`,
-        skills: ["Computer Science", "Software Engineering"],
+        description: `University of Mumbai | Mumbai, India`,
       },
     ],
   },

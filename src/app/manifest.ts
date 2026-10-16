@@ -1,33 +1,35 @@
 import type { MetadataRoute } from "next";
 
-import { SITE_INFO } from "@/config/site";
+import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
+import { USER } from "@/features/profile/data/user";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    short_name: SITE_INFO.name,
+    short_name: USER.firstName,
     name: SITE_INFO.name,
     description: SITE_INFO.description,
+    lang: "en-IN",
     icons: [
       {
-        src: "https://assets.shubhk.me/images/icon-vector.svg?v=2",
+        src: "/icons/icon.svg",
         type: "image/svg+xml",
         sizes: "any",
         purpose: "any",
       },
       {
-        src: "https://assets.shubhk.me/images/icon-192x192.png?v=2",
+        src: "/icons/icon-192.png",
         type: "image/png",
         sizes: "192x192",
         purpose: "any",
       },
       {
-        src: "https://assets.shubhk.me/images/icon-512x512.png?v=2",
+        src: "/icons/icon-512.png",
         type: "image/png",
         sizes: "512x512",
         purpose: "any",
       },
       {
-        src: "https://assets.shubhk.me/images/maskable-icon.png?v=2",
+        src: "/icons/maskable-512.png",
         type: "image/png",
         sizes: "512x512",
         purpose: "maskable",
@@ -37,30 +39,36 @@ export default function manifest(): MetadataRoute.Manifest {
     start_url: "/?utm_source=pwa",
     display: "standalone",
     scope: "/",
+    theme_color: META_THEME_COLORS.light,
+    background_color: META_THEME_COLORS.light,
     screenshots: [
       {
-        src: "https://assets.shubhk.me/images/screenshot-mobile-dark.webp",
+        src: "/screenshots/mobile-dark.webp",
         type: "image/webp",
         sizes: "440x956",
         form_factor: "narrow",
+        label: "Profile, dark theme, mobile",
       },
       {
-        src: "https://assets.shubhk.me/images/screenshot-mobile-light.webp",
+        src: "/screenshots/mobile-light.webp",
         type: "image/webp",
         sizes: "440x956",
         form_factor: "narrow",
+        label: "Profile, light theme, mobile",
       },
       {
-        src: "https://assets.shubhk.me/images/screenshot-desktop-dark.webp",
+        src: "/screenshots/desktop-dark.webp",
         type: "image/webp",
         sizes: "1920x1080",
         form_factor: "wide",
+        label: "Profile, dark theme, desktop",
       },
       {
-        src: "https://assets.shubhk.me/images/screenshot-desktop-light.webp",
+        src: "/screenshots/desktop-light.webp",
         type: "image/webp",
         sizes: "1920x1080",
         form_factor: "wide",
+        label: "Profile, light theme, desktop",
       },
     ],
   };

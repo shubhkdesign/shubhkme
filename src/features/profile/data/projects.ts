@@ -2,330 +2,195 @@ import type { Project } from "../types/projects";
 
 export const PROJECTS: Project[] = [
   {
-    id: "interior-viewer",
-    title: "Interactive Interior Viewer",
-    period: {
-      start: "01.2023",
-    },
-    skills: ["Three.js", "Raycasting", "GSAP"],
+    id: "upfront",
+    title: "Upfront: COD & Partial Payment",
+    period: { start: "2026", end: "2026" },
+    link: "https://apps.shopify.com/upfront-cod-partial-payment-1",
+    image: "/projects/upfront.webp",
+    skills: [
+      "Shopify App",
+      "Shopify Functions",
+      "React Router",
+      "Polaris",
+      "PostgreSQL",
+      "Prisma",
+      "BullMQ",
+      "Redis",
+    ],
     description: `
-Interaction design demo, built for an internal project at a private company (no public link).
-- Built a raycasting system that maps DOM events into 3D space, enabling direct object selection in the scene.
-- Solved World vs. Local space and NDC coordinate conversions, producing intuitive camera controls.
+Shopify App Store app that lets Indian D2C merchants take an advance or a fee on cash-on-delivery orders to cut fake orders. Live on the [Shopify App Store](https://apps.shopify.com/upfront-cod-partial-payment-1) with 233 installs; product site at [upfrontpayapp.com](https://upfrontpayapp.com).
+- Built from scratch, then re-architected on checkout-native Shopify Functions with an event-driven BullMQ and Redis worker.
+- Dark-launched against version 1: 0 pricing differences across 171,000+ shadow-checked quotes.
     `,
     isExpanded: true,
   },
   {
-    id: "auto-configurator",
-    title: "Real-Time Automotive Configurator",
-    period: {
-      start: "01.2023",
-    },
-    skills: ["Three.js", "WebGL", "PBR", "Shaders"],
+    id: "ai-scheduling-assistant",
+    title: "AI Scheduling Assistant",
+    skills: ["Gemini 2.5", "LLM", "Streaming Chat", "Cal.com API"],
     description: `
-Technical demo, built for an internal project at a private company (no public link).
-- Built a real-time 3D product configurator with Three.js, WebGL, PBR materials and custom shaders.
-- Optimized large texture assets for mobile devices, sustaining 60 FPS during interaction.
-- Handled complex state management across the interactive 3D configurator.
+Chatbot for a chartered accountancy firm that automates client scheduling.
+- Built an LLM chatbot on Gemini 2.5, chosen as a fast low-reasoning model, with streaming chat.
+- It checks live availability through the Cal.com API and books a free slot or reschedules an existing meeting.
     `,
     isExpanded: true,
+  },
+  {
+    id: "stock-bhandar",
+    title: "Stock Bhandar",
+    period: { start: "09.2026", end: "09.2026" },
+    skills: [
+      "Next.js 16",
+      "PostgreSQL",
+      "Drizzle",
+      "PWA",
+      "IndexedDB",
+      "Vitest",
+      "Playwright",
+    ],
+    description: `
+Offline-first billing, inventory and GST software for small Indian retailers (not publicly listed yet).
+- Multi-tenant SaaS with authentication, role-based access control, plans and subscriptions, and an offline-first PWA point of sale with service-worker caching and IndexedDB sync.
+- GST tax engine, invoices, barcode labels, purchase orders and GSTR-1 and GSTR-3B exports, covered by 1,000+ Vitest tests and 29 Playwright E2E specs.
+- Now architecting AI stock monitoring and automated reordering (planned, not built yet).
+    `,
+    isExpanded: true,
+  },
+  {
+    id: "inline3-media",
+    title: "Inline 3 Media Website",
+    period: { start: "2026", end: "2026" },
+    link: "https://inline3media.com",
+    image: "/projects/inline3.webp",
+    skills: ["Next.js 16", "Payload CMS", "MongoDB", "Cloudflare R2", "GSAP"],
+    description: `
+Website and CMS for a Mumbai creative production studio, with a [web and software development section](https://inline3media.com/web) and its client case studies.
+    `,
+  },
+  {
+    id: "pal-india",
+    title: "Pal India",
+    period: { start: "2026", end: "2026" },
+    link: "https://palindia.biz",
+    image: "/projects/pal-india.webp",
+    skills: ["Vite", "Static Site", "SEO", "Cloudflare Pages"],
+    description: `
+Single-page marketing site for a century-old Mumbai shipping and logistics group, built as a fast, SEO-ready static site.
+    `,
+  },
+  {
+    id: "rouse-open-studio",
+    title: "Rouse Open Studio",
+    period: { start: "2026", end: "2026" },
+    link: "https://rouseopenstudio.in",
+    image: "/projects/rouse.webp",
+    skills: ["Next.js", "Payload CMS", "GSAP", "Leaflet"],
+    description: `
+Portfolio site for an architecture and design studio, with a full-viewport video hero, scroll-driven GSAP timelines and CMS-managed projects and workshops.
+    `,
   },
   {
     id: "studio-rare",
-    title: "Studio Rare Design Website",
-    period: {
-      start: "01.2024",
-    },
+    title: "Studio Rare",
+    period: { start: "2025", end: "2025" },
     link: "https://studioraredesign.com",
-    skills: ["GSAP", "Leaflet", "Payload CMS"],
+    image: "/projects/studio-rare.webp",
+    skills: ["Next.js", "Payload CMS", "GSAP", "Leaflet"],
     description: `
+Interior design studio website with one filtered portfolio for residential and commercial work.
 - Built 8+ animated sections and a responsive marquee with GSAP multi-phase timelines and 3D card stacks.
 - Integrated an interactive Leaflet map with custom pulsing pins.
 - Extended Payload CMS global schemas, making site content editable without code changes.
     `,
   },
   {
-    id: "ycdesign",
-    title: "YCDesign Web App",
-    period: {
-      start: "01.2023",
-    },
-    link: "https://yc-design.in",
-    skills: ["Payload CMS", "Next.js", "ISR", "GSAP"],
+    id: "studio-11",
+    title: "Studio 11",
+    period: { start: "2025", end: "2025" },
+    link: "https://studio11.in",
+    image: "/projects/studio11.webp",
+    skills: ["Next.js", "GSAP"],
     description: `
-Motorcycle restoration platform, live.
-- Served dynamic content via Next.js ISR and Payload CMS, keeping CMS-driven pages high-performance.
-- Engineered a custom animation orchestrator with GSAP to coordinate the site's animations.
+Interior design practice site that opens like a pair of curtains on scroll, followed by stacked, pinned project cards.
     `,
   },
   {
-    id: "notable-deployments",
-    title: "Notable Production Deployments",
-    period: {
-      start: "05.2022",
-    },
-    skills: ["Next.js", "TypeScript"],
+    id: "yc-design",
+    title: "YC Design",
+    period: { start: "2025", end: "2025" },
+    link: "https://yc-design.in",
+    image: "/projects/yc-design.webp",
+    skills: ["Next.js", "Payload CMS", "GSAP"],
     description: `
-- [rahgear.in](https://rahgear.in)
-- [sillyowl.in](https://sillyowl.in)
-- [uptantra.com](https://uptantra.com)
-- [bachoomotors.com](https://bachoomotors.com)
-- [arihanthelmets.com](https://arihanthelmets.com)
-- [quickwayslogistics.in](https://quickwayslogistics.in)
-- [bombaycustomworks.com](https://bombaycustomworks.com)
+Motorcycle restoration studio in Mumbai, with a restoration archive filtered by make and model year.
+- Served CMS-driven pages with Next.js and Payload CMS.
+- Built a custom animation orchestrator with GSAP to coordinate the site's animations.
     `,
   },
-  //   {
-  //     id: "react-wheel-picker",
-  //     title: "React Wheel Picker",
-  //     period: {
-  //       start: "05.2025",
-  //     },
-  //     link: "https://react-wheel-picker.shubhk.me",
-  //     skills: [
-  //       "Open Source",
-  //       "React",
-  //       "TypeScript",
-  //       "Monorepo",
-  //       "Turborepo",
-  //       "pnpm-workspace",
-  //       "Package Publishing",
-  //       "NPM Registry",
-  //       "GitHub Actions",
-  //     ],
-  //     description: `iOS-like wheel picker for React with smooth inertia scrolling and infinite loop support.
-  // - 📱 Natural touch scrolling with smooth inertia effect
-  // - 🖱️ Mouse drag and scroll support for desktop
-  // - 🔄 Infinite loop scrolling
-  // - 🎨 Unstyled components for complete style customization
-  // - ⚡️ Easy installation via shadcn CLI
-
-  // This project is proudly supported by:
-
-  // <a href="https://vercel.com/blog/summer-2025-oss-program#react-wheel-picker">
-  // <img src="https://assets.shubhk.me/images/project-logos/vercel-oss-program-badge-white.svg?v=1" alt="Vercel OSS Program" class="hidden [html.dark_&]:block">
-  // <img src="https://assets.shubhk.me/images/project-logos/vercel-oss-program-badge-black.svg?v=1" alt="Vercel OSS Program" class="hidden [html.light_&]:block">
-  // </a>
-  // `,
-  //     logo: "https://assets.shubhk.me/images/project-logos/react-wheel-picker.svg",
-  //   },
-  //   {
-  //     id: "shubhkedotme",
-  //     title: "shubhk.me",
-  //     period: {
-  //       start: "01.2025",
-  //     },
-  //     link: "https://github.com/shubhkdesign/shubhk.me",
-  //     skills: [
-  //       "Open Source",
-  //       "Next.js 15",
-  //       "Tailwind CSS v4",
-  //       "Radix UI",
-  //       "Motion",
-  //       "shadcn/ui",
-  //       "Component Registry",
-  //       "Vercel",
-  //     ],
-  //     description: `A minimal portfolio, component registry, and blog.
-  // - Clean & modern design
-  // - Light & Dark theme support
-  // - vCard integration
-  // - SEO optimization: [JSON-LD schema](https://json-ld.org), sitemap, robots
-  // - AI-friendly [/llms.txt](https://llmstxt.org)
-  // - Spam-protected email
-  // - Installable PWA
-
-  // Blog Features:
-  // - MDX & Markdown support
-  // - Syntax Highlighting for better readability
-  // - RSS Feed for easy content distribution
-  // - Dynamic OG Images for rich previews`,
-  //     logo: "https://assets.shubhk.me/images/project-logos/chanhdaidotcom.svg",
-  //   },
-  //   {
-  //     id: "quaricdotcom",
-  //     title: "quaric.com",
-  //     period: {
-  //       start: "03.2024",
-  //     },
-  //     link: "https://quaric.com",
-  //     skills: [
-  //       "Company Project",
-  //       "Next.js 15",
-  //       "Tailwind CSS v3",
-  //       "shadcn/ui",
-  //       "Strapi 5",
-  //       "VNPAY-QR",
-  //       "Docker",
-  //       "Docker Compose",
-  //       "NGINX",
-  //     ],
-  //     logo: "https://assets.shubhk.me/images/project-logos/quaricdotcom.svg",
-  //   },
-  //   {
-  //     id: "zadark",
-  //     title: "ZaDark",
-  //     period: {
-  //       start: "01.2022",
-  //     },
-  //     link: "https://zadark.com",
-  //     skills: [
-  //       "Pet Project",
-  //       "Open Source",
-  //       "Browser Extension",
-  //       "CLI",
-  //       "Docusaurus 3",
-  //     ],
-  //     description: `ZaDark adds Dark Mode, anti-peeking, customizable fonts, backgrounds, and more to Zalo Web and PC.
-  // - Earned 10M+ VND in net sales from a paid Safari Extension.
-  // - 80,000+ downloads on SourceForge (awarded Community Leader badge by SourceForge)
-  // - 15,000+ active users via Chrome Web Store
-  // - Bronze Medal — 10th Design, Manufacturing, and Application Award 2022`,
-  //     logo: "https://assets.shubhk.me/images/project-logos/zadark.svg",
-  //   },
-  //   // {
-  //   //   id: "qabox",
-  //   //   title: "QABox",
-  //   //   period: {
-  //     start: "07.2023",
-  //     end: "07.2023",
-  //   },
-  //   link: "https://github.com/shubhkdesign/qabox",
-  //   skills: [
-  //     "University Project",
-  //     "PHP",
-  //     "MySQL",
-  //     "MVC",
-  //     "Docker",
-  //     "Docker Compose",
-  //   ],
-  //   description:
-  //     "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/shubhkdesign/qabox",
-  // },
-  // {
-  //   id: "taskbox",
-  //   title: "TaskBox",
-  //   period: {
-  //     start: "07.2023",
-  //     end: "07.2023",
-  //   },
-  //   link: "https://github.com/shubhkdesign/taskbox",
-  //   skills: [
-  //     "University Project",
-  //     "PHP",
-  //     "MySQL",
-  //     "MVC",
-  //     "Docker",
-  //     "Docker Compose",
-  //   ],
-  //   description:
-  //     "- Course: Distributed Applications — FIT@HCMUS\n- Project Score: 10/10\n- Source Code: https://github.com/shubhkdesign/taskbox",
-  // },
-  // {
-  //   id: "daichat-app",
-  //   title: "DaiChat App",
-  //   period: {
-  //     start: "07.2020",
-  //     end: "07.2020",
-  //   },
-  //   link: "https://www.youtube.com/watch?v=H5U3J_W1low",
-  //   skills: ["University Project", "Java", "Java Swing", "Java Networking"],
-  //   description: `- Course: Java Application Programming — FIT@HCMUS
-  // - Requirement: Developed a real-time chat application using Java technologies
-  // - Project Score: 10/10
-  // - Source Code:
-  //   - Server: https://github.com/shubhkdesign/ltudjava-summer2020-chatapp_server
-  //   - Client: https://github.com/shubhkdesign/ltudjava-summer2020-chatapp_client`,
-  // },
-  // {
-  //   id: "qlsv-app",
-  //   title: "QLSV App",
-  //   period: {
-  //     start: "06.2020",
-  //     end: "06.2020",
-  //   },
-  //   link: "https://www.youtube.com/watch?v=tG9SZEBrwog",
-  //   skills: ["University Project", "Java", "Java Swing", "Hibernate", "MySQL"],
-  //   description: `- Course: Java Application Programming — FIT@HCMUS
-  // - Requirement: Built a student management system with role-based functionalities using Java technologies
-  // - Project Score: 10/10
-  // - Source Code: https://github.com/shubhkdesign/ltudjava-summer2020-hibernate`,
-  //   // },
-  //   {
-  //     id: "penphy",
-  //     title: "Penphy",
-  //     period: {
-  //       start: "01.2019",
-  //       end: "08.2019",
-  //     },
-  //     link: "https://www.youtube.com/watch?v=EdU7rUO-UA4",
-  //     skills: ["Startup Project", "JavaScript", "React Native"],
-  //     description: "2nd Prize — Business Startup Competition 2019",
-  //   },
-  //   {
-  //     id: "unlimitedstudy",
-  //     title: "UnlimitedStudy",
-  //     period: {
-  //       start: "01.2017",
-  //       end: "08.2018",
-  //     },
-  //     link: "https://muctim.tuoitre.vn/cong-cu-ho-tro-viec-day-va-hoc-55107.htm",
-  //     skills: [
-  //       "National Competition",
-  //       "Creative Software",
-  //       "PHP",
-  //       "Laravel 4",
-  //       "MySQL",
-  //       "jQuery",
-  //       "Bootstrap 3",
-  //     ],
-  //     description: `UnlimitedStudy is a website that provides teaching and learning support tools for teachers and students.
-  // - 3rd Prize — National Science and Engineering Fair 2018 (ViSEF)
-  // - 1st Prize — Can Tho City Science and Engineering Fair 2018
-  // - 3rd Prize — National Young Informatics Contest 2018
-  // - 2nd Prize — Can Tho City Youth and Children's Creativity Contest 2018
-  // - 3rd Prize — Can Tho City Young Informatics Contest 2018
-  // - Reached 7,000+ users, mainly high school students in Can Tho City.
-  // - Pilot implemented in high schools across Can Tho City with English quizzes, supervised by English subject specialists from the Can Tho City Department of Education and Training.`,
-  //     logo: "https://assets.shubhk.me/images/project-logos/unlimitedstudy.webp",
-  //   },
-  //   // {
-  //   //   id: "dmessage",
-  //   //   title: "DMessage",
-  //   //   period: {
-  //   //     start: "05.2017",
-  //   //     end: "05.2017",
-  //   },
-  //   link: "https://github.com/shubhkdesign/DMessage",
-  //   skills: [
-  //     "Self-learning Project",
-  //     "Pet Project",
-  //     "Express.js",
-  //     "Socket.io",
-  //     "MongoDB",
-  //     "Mongoose ODM",
-  //   ],
-  //   description:
-  //     "A Messenger clone built to practice real-time communication using Socket.IO. This project showcases my self-learning journey in implementing WebSockets for instant messaging.",
-  // },
-  // {
-  //   id: "study-english",
-  //   title: "Study English",
-  //   period: {
-  //     start: "11.2016",
-  //     end: "12.2017",
-  //   },
-  //   link: "https://www.youtube.com/watch?v=OYgugvjqU4A",
-  //   skills: [
-  //     "National Competition",
-  //     "Creative Software",
-  //     "PHP",
-  //     "Laravel 4",
-  //     "MySQL",
-  //   ],
-  //   description: `Study English is a free, mobile-friendly website for high school English learning, offering vocabulary, quizzes, listening practice, and more.
-  // - Consolation Prize — National Youth and Children's Creativity Contest 2016
-  // - 1st Prize — Can Tho City Youth and Children's Creativity Contest 2016
-  // - Consolation Prize — Can Tho City Young Informatics Contest 2016`,
-  // },
+  {
+    id: "electromech",
+    title: "Electromech Air Circulators",
+    period: { start: "2025", end: "2025" },
+    link: "https://electromechaircirculators.com",
+    image: "/projects/electromech.webp",
+    skills: ["Next.js", "Product Catalogue"],
+    description: `
+Product catalogue for an industrial fan manufacturer, with each fan listed by sweep and linked to its technical schematic.
+    `,
+  },
+  {
+    id: "quickways-logistics",
+    title: "Quick Ways Logistics",
+    period: { start: "2025", end: "2025" },
+    link: "https://quickwayslogistics.in",
+    image: "/projects/quickways.webp",
+    skills: ["Tailwind CSS", "Landing Page"],
+    description: `
+One-page website for an air and sea freight forwarder, built around a single call to action: get a quote.
+    `,
+  },
+  {
+    id: "rahgear",
+    title: "Rahgear",
+    period: { start: "2024", end: "2024" },
+    link: "https://rahgear.in",
+    image: "/projects/rahgear.webp",
+    skills: ["Shopify", "Liquid", "Tinker"],
+    description: `
+Shopify store for motorcycle luggage, with filters that lead with motorcycle type and mount style, plus warranty registration and a retailer finder.
+    `,
+  },
+  {
+    id: "uptantra",
+    title: "Uptantra",
+    period: { start: "2023", end: "2023" },
+    link: "https://uptantra.com",
+    image: "/projects/uptantra.webp",
+    skills: ["Shopify", "Liquid", "Dawn"],
+    description: `
+Shopify store for bags upcycled from truck inner tubes, on a customised Dawn theme.
+    `,
+  },
+  {
+    id: "arihant-helmets",
+    title: "Arihant Helmets",
+    period: { start: "2023", end: "2023" },
+    link: "https://arihanthelmets.com",
+    image: "/projects/arihant-helmets.webp",
+    skills: ["Shopify", "Liquid", "Tinker"],
+    description: `
+Shopify store for a multi-brand helmet retailer with a 380+ helmet catalogue, filterable by brand, type and helmet size.
+    `,
+  },
+  {
+    id: "bachoo-motors",
+    title: "Bachoo Motors",
+    period: { start: "2022", end: "2022" },
+    link: "https://bachoomotors.com",
+    image: "/projects/bachoo-motors.webp",
+    skills: ["Shopify", "Liquid", "Ritual"],
+    description: `
+Shopify store for a motorcycle gear and spare parts shop, with navigation organised like the shop's own shelves.
+    `,
+  },
 ];
