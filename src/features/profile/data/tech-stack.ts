@@ -34,26 +34,11 @@ export const TECH_STACK: TechStack[] = [
     categories: ["Runtime Environment"],
   },
   {
-    key: "express",
-    title: "Express",
-    href: "https://expressjs.com/",
-    categories: ["Framework", "Back end"],
-    theme: true,
-    localIcon: true,
-  },
-  {
     key: "react-router",
     title: "React Router",
     href: "https://reactrouter.com/",
     categories: ["Library", "Navigation"],
     theme: true,
-    localIcon: true,
-  },
-  {
-    key: "vite",
-    title: "Vite",
-    href: "https://vite.dev/",
-    categories: ["Tooling"],
     localIcon: true,
   },
   {
@@ -181,6 +166,20 @@ export const TECH_STACK: TechStack[] = [
     title: "Jira",
     href: "https://www.atlassian.com/software/jira",
     categories: ["Tools", "Planning"],
+    localIcon: true,
+  },
+  {
+    key: "claude",
+    title: "Claude Code",
+    href: "https://www.anthropic.com/claude-code",
+    categories: ["Tools", "AI"],
+    localIcon: true,
+  },
+  {
+    key: "gemini",
+    title: "Gemini",
+    href: "https://deepmind.google/technologies/gemini/",
+    categories: ["AI", "LLM"],
     localIcon: true,
   },
   {

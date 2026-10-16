@@ -15,20 +15,20 @@ export const EXPERIENCES: Experience[] = [
         employmentType: "Full-time",
         icon: "code",
         description: `- Lead the web development team of a Mumbai creative studio in 15-day Agile sprints, planning and assigning work in Jira; communicate directly with clients and collaborate with designers, building from Figma designs.
+- Use AI coding tools (Claude Code, MCP) daily, with specs, code review and automated tests on every change.
 
 **[Upfront: COD & Partial Payment](https://apps.shopify.com/upfront-cod-partial-payment-1)** - Shopify App Store payments app
 
 - Built Upfront version 1 from scratch and launched it in Mar 2026; it lets Indian D2C merchants take an advance or fee on COD orders to cut fake orders: 233 installs, 744 paid advance orders across 33 stores in the past month.
-- Re-architected it as version 2 on checkout-native Shopify Functions (Cart Transform, Payment Customization, Discount, Validation), PostgreSQL database design with Prisma migrations and an event-driven BullMQ/Redis worker for idempotent background jobs.
+- Re-architected it as version 2 on checkout-native Shopify Functions, PostgreSQL database design with Prisma migrations and an event-driven BullMQ/Redis worker for idempotent background jobs.
 - Dark-launched it: shadow-priced 171,000+ live quotes against version 1 with 0 differences, replayed 30 days of paid orders, then released behind per-store feature flags with backups, rollback plans and 48-hour production monitoring.
-- Led launch-week incident response: debugged and hotfixed an API rate-limit failure, taking a store's quote errors from 218 in one burst to 0 over the next peak days; fixed an uninstall-webhook bug and recovered a dead-lettered job.
+- Led launch-week incident response: hotfixed an API rate-limit failure (quote errors 218 to 0) and an uninstall bug.
 - Built usage-based billing and third-party SMS and WhatsApp OTP integrations behind feature flags; GitHub Actions CI runs security audits, lint, type checks and 5,800+ Vitest tests on releases; Playwright E2E on staging.
 
 **Client websites and stores**
 
-- Delivered marketing sites, CMS platforms and Shopify e-commerce stores for 13 client brands, including [studioraredesign.com](https://studioraredesign.com), [yc-design.in](https://yc-design.in), [rouseopenstudio.in](https://rouseopenstudio.in) and [rahgear.in](https://rahgear.in).
-- Built Next.js sites on Payload CMS, MongoDB and Cloudflare R2 with editable pages, SEO fields, redirects and sitemaps; deployed on AWS (EC2, Lightsail, S3, Lambda) and Vercel; most score 95 on Lighthouse.
-- Built GSAP, Three.js and Leaflet interfaces and custom Shopify Liquid themes; practiced unit and A/B testing.`,
+- Delivered sites, CMS platforms and Shopify e-commerce stores for 13 client brands ([studioraredesign.com](https://studioraredesign.com), [rouseopenstudio.in](https://rouseopenstudio.in), [yc-design.in](https://yc-design.in), [rahgear.in](https://rahgear.in)), with GSAP, Three.js and Leaflet interfaces and custom Liquid themes.
+- Built Next.js sites on Payload CMS, MongoDB and Cloudflare R2 with editable pages, SEO fields, redirects and sitemaps; deployed on AWS (EC2, Lightsail, S3, Lambda) and Vercel; most score 95 on Lighthouse.`,
         skills: [
           "TypeScript",
           "Next.js",
@@ -44,6 +44,8 @@ export const EXPERIENCES: Experience[] = [
           "GSAP",
           "Three.js",
           "Playwright",
+          "Claude Code",
+          "MCP",
         ],
         isExpanded: true,
       },

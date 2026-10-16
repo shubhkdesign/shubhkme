@@ -29,8 +29,9 @@ export const MAIN_NAV: NavItem[] = [
   // },
 ];
 
-export const SOURCE_CODE_GITHUB_REPO = "shubhkdesign/";
-export const SOURCE_CODE_GITHUB_URL = "https://github.com/shubhkdesign/";
+export const SOURCE_CODE_GITHUB_REPO = "shubhkdesign/shubhkme";
+export const SOURCE_CODE_GITHUB_URL =
+  "https://github.com/shubhkdesign/shubhkme";
 
 export const UTM_PARAMS = {
   utm_source: "shubhk.me",

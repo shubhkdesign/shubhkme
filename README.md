@@ -1,6 +1,6 @@
 # [shubhk.me](https://www.shubhk.me)
 
-A minimal portfolio, component registry, and blog to showcase my work as a Senior Full-Stack Engineer.
+Portfolio of Shubham Khade, a Senior Full-Stack Engineer based in Mumbai: experience, live projects and links.
 
 Check out the live site: [shubhk.me](https://shubhk.me)
 
@@ -26,21 +26,14 @@ Check out the live site: [shubhk.me](https://shubhk.me)
 ### Blog
 
 - MDX & Markdown support
-- Access markdown by adding `.mdx` to URLs, e.g. `/blog/welcome.mdx`
+- Access markdown by adding `.mdx` to URLs, e.g. `/blog/shubhk-brand.mdx`
 - Syntax Highlighting for better readability
 - RSS Feed for easy content distribution
 - Dynamic OG Images for rich previews
 
 ### Component Registry
 
-Easily build and distribute your own components, hooks, and pages using a custom registry powered by the [shadcn CLI](https://ui.shadcn.com/docs/cli).
-
-Each component is well-documented through the Blog, featuring:
-
-- **Live Preview**: Interactive component demos
-- **Code Snippets**: Readable and copyable examples
-- **Beautiful Code Blocks**: Styled for clarity and dark mode
-- **Command Blocks**: One-click copy for quick install commands (`pnpm`, `npm`, `yarn`, `bun`)
+Custom shadcn registry (`/r`) inherited from the template, built with the [shadcn CLI](https://ui.shadcn.com/docs/cli). The components are by the template author and keep their original attribution.
 
 ## Development
 
@@ -50,6 +43,6 @@ Please refer to the [Development Guide](./DEVELOPMENT.md) for more details.
 
 Licensed under the [MIT license](./LICENSE).
 
-You're free to use my code! Just make sure to <ins>remove all my personal information</ins> before publishing your website. It's awesome to see my code being useful to someone!
+## Credits
 
-
+Built from the MIT-licensed [chanhdai.com](https://github.com/ncdai/chanhdai.com) template by Chánh Đại, whose copyright notice stays in [LICENSE](./LICENSE). Content, branding and assets here are Shubham Khade's.

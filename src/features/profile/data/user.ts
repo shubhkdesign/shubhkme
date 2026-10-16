@@ -12,10 +12,11 @@ export const USER: User = {
     "Creating with code. Small details matter.",
     "Senior Full-Stack Engineer",
     "Shopify App Builder",
+    "Building with AI",
     "Photographer",
   ],
   address: "Mumbai, India",
-  phoneNumber: "KzkxNzAyMTEzMzk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
+  phoneNumber: "KzkxNzAyMTEzMzk5Mw", // E.164 format, base64 encoded
   email: "c2h1YmhrZGVzaWduQGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://shubhk.me",
   jobTitle: "Senior Full-Stack Engineer",
@@ -29,9 +30,9 @@ export const USER: User = {
   about: `
 Senior full-stack software engineer with 5+ years shipping scalable web products end to end in **Next.js**, **React**, **TypeScript** and **Node.js**: system design, SQL and NoSQL data, REST and GraphQL API design, UI and AWS deployment.
 
-Built a [Shopify App Store app](https://apps.shopify.com/upfront-cod-partial-payment-1) from scratch to 233 installs, then re-architected it on Shopify Functions and an event-driven job queue with 0 pricing differences across 171,000+ shadow-checked quotes.
+Built a [Shopify App Store app](https://apps.shopify.com/upfront-cod-partial-payment-1) from scratch to 233 installs and re-architected it on Shopify Functions with 0 pricing differences across 171,000+ shadow-checked quotes.
 
-Lead a development team in Agile sprints; work directly with clients and designers and take ownership of architecture, code review, releases and incidents.
+Lead a team in Agile sprints and work directly with clients and designers. Build with AI tools (Claude Code, MCP, Gemini 2.5) and ship LLM features such as streaming chat.
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",
@@ -47,6 +48,8 @@ Lead a development team in Agile sprints; work directly with clients and designe
     "full-stack developer",
     "Next.js developer",
     "Shopify app developer",
+    "AI engineer",
+    "LLM chatbot developer",
     "Shubham Khade software engineer",
     "Photographer",
   ],

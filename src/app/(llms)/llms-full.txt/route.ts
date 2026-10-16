@@ -3,8 +3,6 @@ import dayjs from "dayjs";
 import { SITE_INFO } from "@/config/site";
 import { getAllPosts } from "@/features/blog/data/posts";
 import { getLLMText } from "@/features/blog/lib/get-llm-text";
-import { AWARDS } from "@/features/profile/data/awards";
-import { CERTIFICATIONS } from "@/features/profile/data/certifications";
 import { EXPERIENCES } from "@/features/profile/data/experiences";
 import { PROJECTS } from "@/features/profile/data/projects";
 import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
@@ -55,15 +53,6 @@ ${PROJECTS.map((item) => {
 }).join("\n\n")}
 `;
 
-const awardsText = `## Awards
-
-${AWARDS.map((item) => `### ${item.prize} | ${item.title}\n\n${item.description}`).join("\n\n")}
-`;
-
-const certificationsText = `## Certifications
-
-${CERTIFICATIONS.map((item) => `- [${item.title}](${item.credentialURL})`).join("\n")}`;
-
 async function getBlogContent() {
   const text = await Promise.all(
     allPosts.map(
@@ -79,13 +68,11 @@ async function getContent() {
 
 # shubhk.me
 
-> A minimal portfolio, component registry, and blog to showcase my work as a Senior Full-Stack Engineer.
+> Portfolio of Shubham Khade, a Senior Full-Stack Engineer based in Mumbai.
 
 ${aboutText}
 ${experienceText}
 ${projectsText}
-${awardsText}
-${certificationsText}
 
 ## Blog
 

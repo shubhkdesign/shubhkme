@@ -25,6 +25,17 @@ Shopify App Store app that lets Indian D2C merchants take an advance or a fee on
     isExpanded: true,
   },
   {
+    id: "ai-scheduling-assistant",
+    title: "AI Scheduling Assistant",
+    skills: ["Gemini 2.5", "LLM", "Streaming Chat", "Cal.com API"],
+    description: `
+Chatbot for a chartered accountancy firm that automates client scheduling.
+- Built an LLM chatbot on Gemini 2.5, chosen as a fast low-reasoning model, with streaming chat.
+- It checks live availability through the Cal.com API and books a free slot or reschedules an existing meeting.
+    `,
+    isExpanded: true,
+  },
+  {
     id: "stock-bhandar",
     title: "Stock Bhandar",
     period: { start: "09.2026", end: "09.2026" },
@@ -41,6 +52,7 @@ Shopify App Store app that lets Indian D2C merchants take an advance or a fee on
 Offline-first billing, inventory and GST software for small Indian retailers (not publicly listed yet).
 - Multi-tenant SaaS with authentication, role-based access control, plans and subscriptions, and an offline-first PWA point of sale with service-worker caching and IndexedDB sync.
 - GST tax engine, invoices, barcode labels, purchase orders and GSTR-1 and GSTR-3B exports, covered by 1,000+ Vitest tests and 29 Playwright E2E specs.
+- Now architecting AI stock monitoring and automated reordering (planned, not built yet).
     `,
     isExpanded: true,
   },

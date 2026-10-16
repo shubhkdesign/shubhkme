@@ -6,7 +6,6 @@ import {
   BriefcaseBusinessIcon,
   CircleUserIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
   SunIcon,
@@ -299,13 +298,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             <CommandItem onSelect={() => handleOpenLink("/blog/shubhk-brand")}>
               <TriangleDashedIcon />
               Brand Guidelines
-            </CommandItem>
-
-            <CommandItem asChild>
-              <a href="https://assets.shubhk.me/shubhk-brand.zip" download>
-                <DownloadIcon />
-                Download Brand Assets
-              </a>
             </CommandItem>
           </CommandGroup>
 

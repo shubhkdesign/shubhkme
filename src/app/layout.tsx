@@ -77,16 +77,12 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "https://assets.shubhk.me/images/favicon.ico?v=2",
-        sizes: "any",
-      },
-      {
-        url: "https://assets.shubhk.me/images/favicon.svg?v=2",
+        url: "/icons/icon.svg",
         type: "image/svg+xml",
       },
     ],
     apple: {
-      url: "https://assets.shubhk.me/images/apple-touch-icon.png?v=2",
+      url: "/icons/apple-touch-icon.png",
       type: "image/png",
       sizes: "180x180",
     },
