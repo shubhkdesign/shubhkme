@@ -14,21 +14,27 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Full-time",
         icon: "code",
-        description: `- Lead the web development team of a Mumbai creative studio in 15-day Agile sprints, planning and assigning work in Jira; communicate directly with clients and collaborate with designers, building from Figma designs.
-- Use AI coding tools (Claude Code, MCP) daily, with specs, code review and automated tests on every change.
+        description: `- Lead the web development team in 15-day Agile sprints, planning and assigning work in Jira.
+- Use Claude Code daily with Railway and AWS MCP servers; each change gets a spec, code review and tests.
 
 **[Upfront: COD & Partial Payment](https://apps.shopify.com/upfront-cod-partial-payment-1)** - Shopify App Store payments app
 
-- Built Upfront version 1 from scratch and launched it in Mar 2026; it lets Indian D2C merchants take an advance or fee on COD orders to cut fake orders: 233 installs, 744 paid advance orders across 33 stores in the past month.
-- Re-architected it as version 2 on checkout-native Shopify Functions, PostgreSQL database design with Prisma migrations and an event-driven BullMQ/Redis worker for idempotent background jobs.
-- Dark-launched it: shadow-priced 171,000+ live quotes against version 1 with 0 differences, replayed 30 days of paid orders, then released behind per-store feature flags with backups, rollback plans and 48-hour production monitoring.
-- Led launch-week incident response: hotfixed an API rate-limit failure (quote errors 218 to 0) and an uninstall bug.
-- Built usage-based billing and third-party SMS and WhatsApp OTP integrations behind feature flags; GitHub Actions CI runs security audits, lint, type checks and 5,800+ Vitest tests on releases; Playwright E2E on staging.
+- Built version 1 from scratch and launched it in Mar 2026; Indian D2C merchants use it to take an advance or fee on COD orders and cut fake orders: 233 installs, 744 paid advance orders across 33 stores in the past month.
+- Re-architected it as version 2 for scale: pricing moved into checkout-native Shopify Functions (Cart Transform, Payment Customization, Discount, Validation) on Shopify's infrastructure, with an event-driven BullMQ/Redis queue running webhooks as idempotent jobs and a PostgreSQL data model in Prisma.
+- Dark-launched it: shadow-priced 171,000+ live quotes against version 1 with 0 unexplained differences and replayed 30 days of orders, then released per store behind feature flags with rollback plans and 48-hour monitoring.
+- Debugged and hotfixed a launch-week Shopify API rate-limit failure (218 quote errors, then 0) and an uninstall bug.
+- Added usage-based billing and SMS and WhatsApp OTP integrations behind feature flags.
+- Set up GitHub Actions CI (npm security audits, lint, type checks, 6,000+ Vitest tests) and Playwright E2E on staging.
 
-**Client websites and stores**
+**Custom Next.js websites**
 
-- Delivered sites, CMS platforms and Shopify e-commerce stores for 13 client brands ([studioraredesign.com](https://studioraredesign.com), [rouseopenstudio.in](https://rouseopenstudio.in), [yc-design.in](https://yc-design.in), [rahgear.in](https://rahgear.in)), with GSAP, Three.js and Leaflet interfaces and custom Liquid themes.
-- Built Next.js sites on Payload CMS, MongoDB and Cloudflare R2 with editable pages, SEO fields, redirects and sitemaps; deployed on AWS (EC2, Lightsail, S3, Lambda) and Vercel; most score 95 on Lighthouse.`,
+- Developed Next.js and Payload CMS sites from Figma designs, communicating directly with clients and collaborating with designers: [inline3media.com](https://inline3media.com), [studioraredesign.com](https://studioraredesign.com), [rouseopenstudio.in](https://rouseopenstudio.in), [yc-design.in](https://yc-design.in) and [studio11.in](https://studio11.in).
+- Built CMS-editable pages, SEO and sitemaps, GSAP animations, Leaflet maps and a Three.js 3D motorcycle viewer for an internal client project.
+- Deployed the sites on AWS (EC2, Lightsail, S3, Lambda) and Vercel; most score 95 on Lighthouse.
+
+**Shopify e-commerce storefronts**
+
+- Customized Liquid themes for Shopify stores: [rahgear.in](https://rahgear.in), [uptantra.com](https://uptantra.com), [arihanthelmets.com](https://arihanthelmets.com) and [bachoomotors.com](https://bachoomotors.com).`,
         skills: [
           "TypeScript",
           "Next.js",
