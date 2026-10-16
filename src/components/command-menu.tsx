@@ -9,9 +9,7 @@ import {
   DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
   SunIcon,
-  TextIcon,
   TriangleDashedIcon,
   TypeIcon,
 } from "lucide-react";
@@ -175,6 +173,8 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
     [setTheme]
   );
 
+  // Blog and component links are parked until the blog section is enabled.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { blogLinks, componentLinks } = useMemo(
     () => ({
       blogLinks: posts

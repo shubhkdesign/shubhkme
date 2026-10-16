@@ -1,6 +1,6 @@
 # [shubhk.me](https://www.shubhk.me)
 
-A minimal portfolio, component registry, and blog to showcase my work as a Design Engineer.
+A minimal portfolio, component registry, and blog to showcase my work as a Senior Full-Stack Engineer.
 
 Check out the live site: [shubhk.me](https://shubhk.me)
 

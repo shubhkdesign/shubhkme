@@ -20,7 +20,7 @@ export function ProfileHeader() {
           />
         </div>
 
-        {/* Flag of Viet Nam */}
+        {/* Flag of India */}
         <svg
           className="absolute top-0 -left-px h-8 sm:h-9"
           viewBox="0 0 30 20"

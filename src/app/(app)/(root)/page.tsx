@@ -2,10 +2,6 @@ import dayjs from "dayjs";
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
-import { Awards } from "@/features/profile/components/awards";
-import { Blog } from "@/features/profile/components/blog";
-import { Brand } from "@/features/profile/components/brand";
-import { Certifications } from "@/features/profile/components/certifications";
 import { Experiences } from "@/features/profile/components/experiences";
 import { Overview } from "@/features/profile/components/overview";
 import { ProfileCover } from "@/features/profile/components/profile-cover";
@@ -13,6 +9,7 @@ import { ProfileHeader } from "@/features/profile/components/profile-header";
 import { Projects } from "@/features/profile/components/projects";
 import { SocialLinks } from "@/features/profile/components/social-links";
 import { TeckStack } from "@/features/profile/components/teck-stack";
+import { SOCIAL_LINKS } from "@/features/profile/data/social-links";
 import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
 
@@ -76,6 +73,9 @@ function getPageJsonLd(): WithContext<PageSchema> {
       name: USER.displayName,
       identifier: USER.username,
       image: USER.avatar,
+      jobTitle: USER.jobTitle,
+      url: USER.website,
+      sameAs: SOCIAL_LINKS.map((link) => link.href),
     },
   };
 }

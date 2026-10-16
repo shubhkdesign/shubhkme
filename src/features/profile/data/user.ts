@@ -7,27 +7,31 @@ export const USER: User = {
   username: "shubhkdesign",
   gender: "male",
   pronouns: "he/him",
-  bio: "Frontend Engineer | React, Next.js, TypeScript, Tailwind CSS",
+  bio: "Senior Full-Stack Engineer | Next.js, React, TypeScript, Node.js",
   flipSentences: [
     "Creating with code. Small details matter.",
-    "Frontend Engineer",
-    "Open Source Contributor",
+    "Senior Full-Stack Engineer",
+    "Shopify App Builder",
     "Photographer",
   ],
   address: "Mumbai, India",
   phoneNumber: "KzkxNzAyMTEzMzk5Mw", // E.164 format, base64 encoded (https://t.io.vn/base64-string-converter)
   email: "c2h1YmhrZGVzaWduQGdtYWlsLmNvbQ==", // base64 encoded
   website: "https://shubhk.me",
-  jobTitle: "Frontend Engineer",
+  jobTitle: "Senior Full-Stack Engineer",
   jobs: [
     {
-      title: "Frontend Engineer",
+      title: "Senior Full-Stack Engineer",
       company: "Inline 3 Media Solutions",
-      website: "https://inline3.media",
+      website: "https://inline3media.com",
     },
   ],
   about: `
-Frontend Engineer with 4+ years building production web applications with React, Next.js, TypeScript and Tailwind CSS. Delivered 30+ production web applications; builds with Next.js App Router, Server Components and SSR/ISR on headless CMS (Payload, Shopify). Integrates **GSAP** and **Three.js** into React component architectures while optimizing Core Web Vitals (LCP, CLS); most client sites score 95 on Lighthouse.
+Senior full-stack software engineer with 5+ years shipping scalable web products end to end in **Next.js**, **React**, **TypeScript** and **Node.js**: system design, SQL and NoSQL data, REST and GraphQL API design, UI and AWS deployment.
+
+Built a [Shopify App Store app](https://apps.shopify.com/upfront-cod-partial-payment-1) from scratch to 233 installs, then re-architected it on Shopify Functions and an event-driven job queue with 0 pricing differences across 171,000+ shadow-checked quotes.
+
+Lead a development team in Agile sprints; work directly with clients and designers and take ownership of architecture, code review, releases and incidents.
   `,
   avatar: "/shubh_avatar.png",
   ogImage: "/ogimage.png",
@@ -39,22 +43,12 @@ Frontend Engineer with 4+ years building production web applications with React,
     "shubhkdesign",
     "shubh khade",
     "shubham khade",
-    "web Developer",
-    "frontend developer",
+    "Senior Full-Stack Engineer",
+    "full-stack developer",
+    "Next.js developer",
+    "Shopify app developer",
     "Shubham Khade software engineer",
-    "Frontend Engineer",
     "Photographer",
   ],
   dateCreated: "2023-10-20", // YYYY-MM-DD
 };
-// Hello, World! I am Shubham Khade — a Frontend Engineer passionate about creating high-performance, user-centric software solutions with intuitive and engaging designs.
-
-// With 4+ years of experience, I specialize in building high-quality web applications using Next.js, React, TypeScript, and modern front-end technologies. Beyond work, I love exploring new technologies and turning ideas into reality through personal projects.
-
-// One of my key projects, [Project Name](https://project.com), ...
-
-// I'm also the creator of ...
-
-// Let's connect and collaborate!
-
-// Let's connect and collaborate!

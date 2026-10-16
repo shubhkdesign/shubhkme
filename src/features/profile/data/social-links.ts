@@ -20,7 +20,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
     href: "https://x.com/chubhu10",
   },
   {
-    icon: "https://assets.shubhk.me/images/link-icons/liquid-glass/behance.webp",
+    icon: "/behance.webp",
     title: "Behance",
     description: "@shubhkhade",
     href: "https://www.behance.net/shubhkhade",

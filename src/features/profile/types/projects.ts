@@ -4,7 +4,8 @@ export type Project = {
   title: string;
   /**
    * Project period for display and sorting.
-   * Use "MM.YYYY" format. Omit `end` for ongoing projects.
+   * Use "MM.YYYY" or "YYYY" format. Omit `end` for ongoing projects;
+   * set `end` equal to `start` to show a single date.
    */
   period: {
     /** Start date (e.g., "05.2025"). */
@@ -18,6 +19,8 @@ export type Project = {
   skills: string[];
   /** Optional rich description; Markdown and line breaks supported. */
   description?: string;
+  /** Screenshot of the live project (path under /public, 1200x592). */
+  image?: string;
   /** Logo image URL (absolute or path under /public). */
   logo?: string;
   /** Whether the project card is expanded by default in the UI. */
