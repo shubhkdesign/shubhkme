@@ -40,4 +40,11 @@ export type User = {
   keywords: string[];
   /** Profile/site start date in YYYY-MM-DD */
   dateCreated: string;
+  /** Text for the page title, description, Open Graph and Twitter cards */
+  meta: {
+    title: string;
+    description: string;
+    ogTitle: string;
+    ogDescription: string;
+  };
 };

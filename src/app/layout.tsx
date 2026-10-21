@@ -5,6 +5,7 @@ import Script from "next/script";
 import type { WebSite, WithContext } from "schema-dts";
 
 import { Providers } from "@/components/providers";
+import { PROFILE_MODE } from "@/config/profile-mode";
 import { META_THEME_COLORS, SITE_INFO } from "@/config/site";
 import { USER } from "@/features/profile/data/user";
 import { fontMono, fontSans } from "@/lib/fonts";
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "Shubham Khade",
+    default: USER.meta.title,
     template: "%s | Shubham Khade",
   },
   description: SITE_INFO.description,
@@ -56,6 +57,8 @@ export const metadata: Metadata = {
     siteName: SITE_INFO.name,
     url: "/",
     type: "profile",
+    title: USER.meta.ogTitle,
+    description: USER.meta.ogDescription,
     firstName: USER.firstName,
     lastName: USER.lastName,
     username: USER.username,
@@ -71,8 +74,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: USER.meta.ogTitle,
+    description: USER.meta.ogDescription,
     creator: "@chubhu10", // Twitter username
     images: [SITE_INFO.ogImage],
+  },
+  other: {
+    "profile-mode": PROFILE_MODE,
   },
   icons: {
     icon: [

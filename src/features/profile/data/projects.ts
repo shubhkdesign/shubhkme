@@ -1,6 +1,8 @@
+import { PROFILE_MODE } from "@/config/profile-mode";
+
 import type { Project } from "../types/projects";
 
-export const PROJECTS: Project[] = [
+const FULLSTACK_PROJECTS: Project[] = [
   {
     id: "upfront",
     title: "Upfront: COD & Partial Payment",
@@ -208,3 +210,25 @@ Offline-first billing, inventory and GST software for small Indian retailers (no
     isExpanded: true,
   },
 ];
+
+/** Per-project description changes for the CTO variant, keyed by project id. */
+const CTO_DESCRIPTIONS: Record<string, string> = {
+  upfront: `
+The [Shopify App Store](https://apps.shopify.com/upfront-cod-partial-payment-1) product of Inline 3 Media Solutions, launched in Mar 2026: Indian D2C merchants use it to take an advance or a fee on cash-on-delivery orders and cut fake orders. 233 installs, 744 paid advance orders across 33 stores in the past month; product site at [upfrontpayapp.com](https://upfrontpayapp.com).
+- Owns the releases and the business setup around it: backups, per-store feature flags, rollback plans, 48-hour monitoring, CERT-In logging, privacy policy, DLT and WhatsApp Business approvals.
+- Re-architected as version 2 on Shopify Functions, BullMQ and Redis jobs and PostgreSQL with Prisma, and priced 171,000+ live quotes in shadow against version 1 with 0 unexplained differences before a per-store release.
+    `,
+  "stock-bhandar": `
+Offline-first billing, inventory and GST software for small Indian retailers (not publicly listed yet).
+- Scalable multi-tenant B2B SaaS with authentication, role-based access control, plans and subscriptions, and an offline-first PWA point of sale with service-worker caching and IndexedDB sync.
+- GST tax engine, invoices, barcode labels, purchase orders and GSTR-1 and GSTR-3B exports, covered by 1,000+ Vitest tests and 29 Playwright E2E specs.
+    `,
+};
+
+const CTO_PROJECTS: Project[] = FULLSTACK_PROJECTS.map((project) => ({
+  ...project,
+  description: CTO_DESCRIPTIONS[project.id] ?? project.description,
+}));
+
+export const PROJECTS: Project[] =
+  PROFILE_MODE === "cto" ? CTO_PROJECTS : FULLSTACK_PROJECTS;
