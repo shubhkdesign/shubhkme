@@ -5,7 +5,7 @@ export const SITE_INFO = {
   name: USER.displayName,
   url: process.env.APP_URL || "https://shubhk.me",
   ogImage: USER.ogImage,
-  description: USER.bio,
+  description: USER.meta.description,
   keywords: USER.keywords,
 };
 
