@@ -53,12 +53,12 @@ Lead the web team in Agile sprints and work directly with clients and designers.
       "Photographer",
     ],
     meta: {
-      title: "Shubham Khade",
+      title: "Shubham Khade - Senior Full-Stack Engineer, Next.js & React",
       description:
-        "Senior Full-Stack Engineer | Next.js, React, TypeScript, Node.js",
-      ogTitle: "Shubham Khade",
+        "Shubham Khade, senior full-stack engineer in Mumbai with 5+ years shipping web products in Next.js, React, TypeScript and Node.js, and a Shopify App Store app.",
+      ogTitle: "Shubham Khade - Senior Full-Stack Engineer, Next.js & React",
       ogDescription:
-        "Senior Full-Stack Engineer | Next.js, React, TypeScript, Node.js",
+        "Shubham Khade, senior full-stack engineer in Mumbai with 5+ years shipping web products in Next.js, React, TypeScript and Node.js, and a Shopify App Store app.",
     },
   },
   cto: {
@@ -97,12 +97,12 @@ Full-stack engineer with 5+ years in **Next.js**, **React**, **TypeScript** and 
       "Photographer",
     ],
     meta: {
-      title: "Shubham Khade | Co-founder and CTO",
+      title: "Shubham Khade - Co-founder & CTO, Inline 3 Media Solutions",
       description:
-        "Co-founder and CTO of Inline 3 Media Solutions, a Mumbai web and software studio. Runs its technology and delivery for 13 client brands and Upfront, a Shopify App Store app with 233 installs.",
-      ogTitle: "Shubham Khade | Co-founder and CTO",
+        "Shubham Khade, co-founder and CTO of Inline 3 Media Solutions, a Mumbai web and software studio. Runs delivery for 13 client brands and Upfront, a Shopify app.",
+      ogTitle: "Shubham Khade - Co-founder & CTO, Inline 3 Media Solutions",
       ogDescription:
-        "Co-founder and CTO of Inline 3 Media Solutions. Runs technology, delivery, releases and India compliance for a Mumbai web and software studio.",
+        "Shubham Khade, co-founder and CTO of Inline 3 Media Solutions, a Mumbai web and software studio. Runs delivery for 13 client brands and Upfront, a Shopify app.",
     },
   },
 };
