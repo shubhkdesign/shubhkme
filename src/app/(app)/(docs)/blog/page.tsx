@@ -1,12 +1,45 @@
 import dayjs from "dayjs";
 import type { Metadata } from "next";
 
+import { SITE_INFO } from "@/config/site";
 import { PostItem } from "@/features/blog/components/post-item";
 import { getAllPosts } from "@/features/blog/data/posts";
 
+const title = "Blog";
+const socialTitle = `${title} | ${SITE_INFO.name}`;
+const description =
+  "A collection of articles on development, design, and ideas.";
+
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "A collection of articles on development, design, and ideas.",
+  title,
+  description,
+  alternates: {
+    canonical: "/blog",
+  },
+  // Nested openGraph/twitter objects replace the root layout's, so the page
+  // restates every field it needs instead of inheriting the home page's.
+  openGraph: {
+    siteName: SITE_INFO.name,
+    url: "/blog",
+    type: "website",
+    title: socialTitle,
+    description,
+    images: [
+      {
+        url: SITE_INFO.ogImage,
+        width: 1200,
+        height: 630,
+        alt: SITE_INFO.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: socialTitle,
+    description,
+    creator: "@chubhu10",
+    images: [SITE_INFO.ogImage],
+  },
 };
 
 export default function Page() {
