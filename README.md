@@ -26,7 +26,7 @@ Check out the live site: [shubhk.me](https://shubhk.me)
 ### Blog
 
 - MDX & Markdown support
-- Access markdown by adding `.mdx` to URLs, e.g. `/blog/shubhk-brand.mdx`
+- Access markdown by adding `.mdx` to URLs, e.g. `/blog/nextjs-chunkloaderror-cloudflare-cache-control.mdx`
 - Syntax Highlighting for better readability
 - RSS Feed for easy content distribution
 - Dynamic OG Images for rich previews

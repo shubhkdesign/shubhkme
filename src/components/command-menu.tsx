@@ -9,7 +9,6 @@ import {
   LetterTextIcon,
   MoonStarIcon,
   SunIcon,
-  TriangleDashedIcon,
   TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
@@ -293,11 +292,6 @@ export function CommandMenu({ posts }: { posts: Post[] }) {
             >
               <TypeIcon />
               Copy Logotype as SVG
-            </CommandItem>
-
-            <CommandItem onSelect={() => handleOpenLink("/blog/shubhk-brand")}>
-              <TriangleDashedIcon />
-              Brand Guidelines
             </CommandItem>
           </CommandGroup>
 
