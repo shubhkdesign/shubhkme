@@ -1,0 +1,268 @@
+---
+title: "Next.js ChunkLoadError after deploy behind Cloudflare: the Cache-Control fix"
+description: "A self-hosted Next.js site behind Cloudflare kept serving year-old HTML that pointed at deleted chunks. Why Next's default s-maxage causes it, and the one headers() rule that fixes it."
+createdAt: 2026-11-28
+updatedAt: 2026-11-28
+---
+
+A production Next.js site I run started failing for some visitors after a routine deploy. Some page loads showed Next's bare "Application error: a client-side exception has occurred". The browser console had `ChunkLoadError` and 404s for files under `/_next/static/chunks/`. A refresh sometimes fixed it, a minute later the same URL could break again, and it was different from one person to the next.
+
+Nothing in the application code had changed in a way that could explain it. The cause was one response header that Next.js sends by default, and a CDN that took it literally.
+
+The setup: Next.js 16 (App Router), self-hosted with `next start` on a container platform, with Cloudflare in front as the CDN. If you deploy to Vercel you will not see this, for reasons covered below.
+
+## The symptom
+
+The tell was in the HTML. I fetched the same page twice, once through Cloudflare and once straight from the origin, and compared the script tags:
+
+```txt title="Script tags in the same page"
+through Cloudflare:  /_next/static/chunks/396932919a225e32.js
+                     /_next/static/chunks/45c5ecc1a2345d95.js
+                     /_next/static/chunks/turbopack-a2e923ad57eb7b16.js
+
+from the origin:     /_next/static/chunks/01xz5txm71sma.js
+                     /_next/static/chunks/turbopack-1iytrnccx793_.js
+```
+
+Two completely different sets of chunk names for the same URL. The chunks named in the Cloudflare copy returned 404 from the origin every time I asked: they belonged to a build that no longer existed. The document itself came back with:
+
+```txt title="Response headers on the document"
+cache-control: max-age=604800, s-maxage=31536000
+cf-cache-status: HIT
+```
+
+`s-maxage=31536000` is one year. Cloudflare was holding the rendered HTML of each page for up to a year and handing it out without asking the origin. Different edge locations had cached different generations of the HTML, which is why the failure came and went depending on who asked and from where.
+
+## Why it happens
+
+Three facts combine.
+
+**1. Next.js gives static pages a one-year `s-maxage`.** A page that is statically rendered and has no `revalidate` export gets `Cache-Control: s-maxage=31536000` from `next start`. This is not something your code sets. It comes from `getCacheControlHeader` in `next/dist/server/lib/cache-control.js`, and it is still the default in the current release. The (unrelated) `max-age=604800` in my header did not come from Next; the `s-maxage` part did, and `s-maxage` is the part a shared cache obeys.
+
+**2. Chunk filenames change on every build.** JavaScript chunks under `/_next/static/chunks/` are content-hashed. When you deploy a new build, the old chunks are gone from the origin unless you go out of your way to keep them.
+
+**3. The HTML names the chunks.** Every document carries `<script src>` tags and a payload that point at the exact chunk files of the build that rendered it.
+
+So once a CDN caches a document for a year, the first deploy after that leaves the cached HTML pointing at files that no longer exist. The browser gets the old HTML, asks for the old chunks, gets 404s, and React either never hydrates the page or throws `ChunkLoadError` when it tries to load a chunk on demand.
+
+Cloudflare does not cache HTML by default. On this site, documents were cache-eligible (they came back with `cf-cache-status: HIT`), and once HTML is eligible Cloudflare uses `s-maxage` from the origin as the edge lifetime. Vercel is different: its edge cache belongs to a single deployment, so a new deploy starts with a clean cache and this default is harmless there. That is why the header looks fine in most examples and only bites when you self-host behind a generic CDN.
+
+## Reproduce it locally
+
+You do not need Cloudflare to see this. A shared cache that honours `s-maxage` is enough, and you can write a toy one in 30 lines. Start with any App Router app that has a static page with a client component on it.
+
+First, check the header Next sends for a static page:
+
+```bash title="Terminal"
+pnpm build && pnpm start -p 3991
+curl -sI http://localhost:3991/about | grep -i cache-control
+# Cache-Control: s-maxage=31536000
+```
+
+Then put this toy CDN in front of it. It does what a CDN does with `s-maxage`: keeps the response for that long and serves it without asking the origin.
+
+```js title="cdn.mjs"
+import http from "node:http";
+
+const ORIGIN = "http://localhost:3991";
+const cache = new Map();
+
+http
+  .createServer(async (req, res) => {
+    const hit = cache.get(req.url);
+    if (hit && hit.expires > Date.now()) {
+      res.writeHead(200, { ...hit.headers, "x-cache": "HIT" });
+      return res.end(hit.body);
+    }
+    const upstream = await fetch(ORIGIN + req.url);
+    const body = Buffer.from(await upstream.arrayBuffer());
+    const headers = Object.fromEntries(upstream.headers);
+    delete headers["content-encoding"];
+    delete headers["content-length"];
+    const sMaxAge = /s-maxage=(\d+)/.exec(headers["cache-control"] ?? "");
+    if (upstream.ok && sMaxAge) {
+      const expires = Date.now() + Number(sMaxAge[1]) * 1000;
+      cache.set(req.url, { body, headers, expires });
+    }
+    res.writeHead(upstream.status, { ...headers, "x-cache": "MISS" });
+    res.end(body);
+  })
+  .listen(4000);
+```
+
+Now simulate a deploy:
+
+1. Run `node cdn.mjs` and open `http://localhost:4000/about` once, so the HTML is cached.
+2. Change the client component (any visible text will do), then `pnpm build` and restart `pnpm start`.
+3. Open `http://localhost:4000/about` again.
+
+On Next 16.4 this is what I got on step 3: a 404 for the chunk that held the changed component, and a page that rendered its server HTML but never hydrated. Buttons did nothing, effects never ran, and a `next/dynamic` component stayed on its loading state forever. Requesting the old chunk from the origin directly also returned 404. That is the whole bug in miniature.
+
+## The fix
+
+Give every HTML document an explicit `Cache-Control` so Next's default never reaches the CDN, and leave the content-hashed assets alone. This goes in `next.config`:
+
+```js title="next.config.mjs"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async headers() {
+    return [
+      {
+        // Every HTML document. The negative lookahead skips hashed build
+        // output, the image optimizer, and static files, so they keep
+        // their own long-lived caching.
+        source:
+          "/:path((?!_next/static|_next/image|.*\\.(?:svg|jpg|jpeg|png|webp|avif|ico|gif|mp4|webm)$).*)",
+        headers: [{ key: "Cache-Control", value: "no-store" }],
+      },
+    ];
+  },
+};
+
+export default nextConfig;
+```
+
+A few things about this rule are deliberate:
+
+- **`no-store` on documents.** Every page request goes through to the origin, so the HTML always names the chunks that the running build actually ships. A Next.js server renders a static page from its prerendered output, so this costs very little.
+- **The exclusions are in the pattern itself**, not in the order of the rules. If someone later adds a rule above or below this one, the static assets still cannot be matched by it.
+- **`/_next/static` needs no rule of its own.** `next start` already sends `public, max-age=31536000, immutable` for those files, and that is correct: a content-hashed filename never changes its content, so caching it forever is safe. Do not weaken it.
+
+If you want the CDN to cache HTML at all, the only safe lifetime is one shorter than the time between your deploys, and even then each deploy has a window where cached pages point at chunks that are gone. `no-store` removes that whole class of problem.
+
+### A safety net for tabs that are already open
+
+Headers fix the next request. They do nothing for a browser tab that loaded the old HTML before the deploy and then tries to load a chunk on demand. For that I added a small client component to the root layout that catches a chunk load failure and reloads the page once:
+
+```tsx title="chunk-error-recovery.tsx"
+"use client";
+
+import { useEffect } from "react";
+
+// A stale document can still name a chunk the current build no longer
+// ships. One reload fetches the current HTML with the current chunk names.
+// The sessionStorage flag stops a genuinely broken deploy from looping.
+const FLAG = "chunk-error-reload-attempted";
+
+function isChunkLoadError(error: unknown) {
+  if (!(error instanceof Error)) return false;
+  if (error.name === "ChunkLoadError") return true;
+  return /loading chunk .* failed|failed to fetch dynamically imported module|importing a module script failed/i.test(
+    error.message
+  );
+}
+
+function reloadOnce() {
+  if (sessionStorage.getItem(FLAG)) return;
+  sessionStorage.setItem(FLAG, "1");
+  window.location.reload();
+}
+
+export function ChunkErrorRecovery() {
+  useEffect(() => {
+    const onError = (e: ErrorEvent) =>
+      isChunkLoadError(e.error) && reloadOnce();
+    const onRejection = (e: PromiseRejectionEvent) =>
+      isChunkLoadError(e.reason) && reloadOnce();
+
+    window.addEventListener("error", onError);
+    window.addEventListener("unhandledrejection", onRejection);
+
+    // This document loaded fine, so allow one reload again for the next deploy.
+    const clear = setTimeout(() => sessionStorage.removeItem(FLAG), 10_000);
+
+    return () => {
+      window.removeEventListener("error", onError);
+      window.removeEventListener("unhandledrejection", onRejection);
+      clearTimeout(clear);
+    };
+  }, []);
+
+  return null;
+}
+```
+
+This is a net, not the fix. Without the header change it would turn a broken page into a reload on every deploy for every visitor holding a cached document.
+
+### A test so it cannot come back
+
+The header rule is one line in a config file that nobody reads until it breaks, so I put a test on it. It runs the real `headers()` from `next.config` through the same path matcher Next uses, and fails if any document path ends up with a long cache lifetime:
+
+```ts title="cache-headers.test.ts"
+import { describe, expect, it } from "vitest";
+// Internal, but it is the matcher Next uses to compile `source` patterns.
+// @ts-expect-error no public types
+import { pathToRegexp } from "next/dist/compiled/path-to-regexp";
+
+import nextConfig from "../next.config.mjs";
+
+const DOCUMENTS = ["/", "/about", "/blog/some-post"];
+const ASSETS = ["/_next/static/chunks/abc123.js", "/logo.svg", "/photo.webp"];
+const ONE_HOUR = 3600;
+
+async function cacheControlFor(path: string) {
+  const rules = await nextConfig.headers!();
+  for (const rule of rules) {
+    if (!pathToRegexp(rule.source).test(path)) continue;
+    const header = rule.headers.find(
+      (h) => h.key.toLowerCase() === "cache-control"
+    );
+    if (header) return header.value;
+  }
+}
+
+describe("document Cache-Control", () => {
+  it("never gives an HTML document a long shared-cache lifetime", async () => {
+    for (const path of DOCUMENTS) {
+      const value = await cacheControlFor(path);
+      expect(value, path).toBeDefined();
+      const sMaxAge = Number(/s-maxage=(\d+)/.exec(value!)?.[1] ?? 0);
+      const maxAge = Number(/(?<!s-)max-age=(\d+)/.exec(value!)?.[1] ?? 0);
+      expect(sMaxAge, path).toBeLessThan(ONE_HOUR);
+      expect(maxAge, path).toBeLessThan(ONE_HOUR);
+    }
+  });
+
+  it("leaves static assets off the no-store rule", async () => {
+    for (const path of ASSETS) {
+      expect(await cacheControlFor(path), path).not.toBe("no-store");
+    }
+  });
+});
+```
+
+## How to check it worked
+
+Locally, run the same deploy simulation as above. With the rule in place, step 3 loads the new HTML, the page hydrates, and the changed text shows up. The headers tell the same story:
+
+```bash title="Terminal (local)"
+curl -sI http://localhost:3991/about | grep -i cache-control
+# Cache-Control: no-store
+
+curl -sI http://localhost:3991/_next/static/chunks/<any-chunk>.js | grep -i cache-control
+# Cache-Control: public, max-age=31536000, immutable
+```
+
+In production, after deploying, check a page and a chunk through the CDN:
+
+```bash title="Terminal (production)"
+curl -sI https://your-site.com/ | grep -i -E 'cache-control|cf-cache-status'
+# cache-control: no-store
+# cf-cache-status: DYNAMIC
+
+curl -sI https://your-site.com/_next/static/chunks/<any-chunk>.js | grep -i -E 'cache-control|cf-cache-status'
+# cache-control: public, max-age=31536000, immutable
+# cf-cache-status: HIT
+```
+
+`DYNAMIC` means Cloudflare passed the document through without caching it. `HIT` on the chunk means the static assets are still served from the edge, which is what you want.
+
+One more step the first time: purge the Cloudflare cache once after the fix deploys. Documents that were cached before the change are still sitting at the edge with their year-long lifetime, and the new header only applies to responses fetched after it.
+
+## What I would do differently
+
+- **Treat "behind a CDN" as a config decision, not a deploy detail.** Any Next.js app that is not on Vercel and sits behind a CDN needs an explicit cache policy for documents from day one. The default is tuned for a platform that throws its cache away on every deploy.
+- **When a bug is intermittent across users, diff what the CDN serves against what the origin serves.** Comparing the chunk names in both copies of the HTML is what cracked this one, and `cf-cache-status: HIT` with a large `age` on a document is the giveaway.
+- **Keep the regression test next to the config.** The fix is one line, and so is the change that would undo it.
+
+This came up on one of the [self-hosted sites on my home page](/#projects).
