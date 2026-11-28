@@ -1,0 +1,178 @@
+---
+title: "Next.js dev server never hydrates on your phone: fix it with allowedDevOrigins"
+description: "Open a Next.js dev server on your phone over the LAN and the page renders but nothing works. Why Next blocks dev resources from non-localhost origins, how to confirm it, and the config that fixes it."
+createdAt: 2026-11-28
+updatedAt: 2026-11-28
+---
+
+I was checking a site on my phone against the dev server running on my laptop, at `http://192.168.1.7:3000`. The page rendered, but an intro animation sat frozen on its first frame and covered everything. The menu button did nothing. Scrolling still worked.
+
+It looked exactly like a mobile-only animation bug, and I spent a long time treating it as one: touch events, GSAP timing, viewport units. The components were fine. The page had never hydrated at all, because the Next.js dev server was refusing part of its own dev runtime to any origin that is not `localhost`.
+
+If you open a Next.js dev server from another device on your network (a phone, a tablet, another laptop, a VM) this will happen to you, and on current versions it happens by default.
+
+## The symptom
+
+What you see on the device:
+
+- The server-rendered HTML shows up, with styles. The page looks right at first glance.
+- Nothing that needs client-side JavaScript works. Buttons and toggles do nothing. `useEffect` never runs, so anything that animates in, fetches on mount, or removes a loading overlay stays stuck. A `next/dynamic` component sits on its loading state.
+- Things the browser does on its own keep working: scrolling, plain `<a>` links, native form controls.
+
+That last point is what makes it misleading. Because scrolling and links work, it does not look like "JavaScript is broken". It looks like one specific component is broken.
+
+On the same machine, `http://localhost:3000` works perfectly. That is why it survives so long: everything you test on the laptop passes.
+
+## Reproduce it
+
+You need any App Router app with one client component that proves it hydrated:
+
+```tsx title="app/hydration-check.tsx"
+"use client";
+
+import { useEffect, useState } from "react";
+
+export function HydrationCheck() {
+  const [hydrated, setHydrated] = useState(false);
+  const [count, setCount] = useState(0);
+  useEffect(() => setHydrated(true), []);
+
+  return (
+    <div>
+      <p>{hydrated ? "hydrated" : "server HTML only"}</p>
+      <button onClick={() => setCount((c) => c + 1)}>
+        Clicked {count} times
+      </button>
+    </div>
+  );
+}
+```
+
+Render it on a page, then start the dev server listening on all interfaces and find your machine's LAN address:
+
+```bash title="Terminal"
+pnpm next dev -H 0.0.0.0 -p 3000
+ip -4 addr   # or ipconfig on Windows, ifconfig on macOS
+```
+
+Open `http://localhost:3000` and it says "hydrated" and the button counts. Open `http://<your-LAN-IP>:3000` (from your phone, or from the same machine, it does not matter) and it says "server HTML only" and the button does nothing.
+
+On Next 16.4 the dev server's terminal prints this once:
+
+```txt title="Dev server output"
+⚠ Blocked cross-origin request to Next.js dev resource /_next/hmr from "192.168.1.6".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+```
+
+On a desktop browser the console also shows a failed WebSocket handshake for `/_next/hmr`. On a phone you see neither: there is no error overlay and nothing on the page. If the terminal is in a different window, or the warning scrolled past among request logs, you get no signal at all.
+
+## Why it happens
+
+The dev server exposes endpoints that production does not have: the hot reload WebSocket at `/_next/hmr`, the dev runtime and chunks under `/_next/`, and the dev overlay's `/__nextjs*` routes. A malicious page you visit while the dev server is running could talk to those endpoints from your browser, so Next checks where dev requests come from.
+
+For requests under `/_next/` and `/__nextjs`, the dev server reads the `Origin` header (or the `Referer` for cross-site script loads) and compares the hostname against an allow list. The list always contains `localhost` and `*.localhost`. Everything else has to be added with `allowedDevOrigins`. A refused request gets a `403`.
+
+The key detail is that it compares the hostname of the origin, not whether the request is same-origin. A page loaded from `http://192.168.1.6:3000` that opens a WebSocket back to `192.168.1.6:3000` is same-origin as far as the browser is concerned, but `192.168.1.6` is not on the list, so it is refused.
+
+In my test on Next 16.4.6, the only request refused was the HMR WebSocket, and that alone was enough to keep the page from hydrating.
+
+How loudly this fails depends on your Next.js version. I checked the dev server source of each release line:
+
+- **15.0 to 15.2.1:** allowed. No check exists.
+- **15.2.2:** blocked, with nothing logged at all.
+- **15.2.3:** blocked, with one warning in the terminal.
+- **15.3.0 to 16.1.x:** allowed, with a warning that a future version will block it. But if `allowedDevOrigins` is set at all, any origin not on it is blocked.
+- **16.2.0 and later:** blocked by default, with the warning shown above.
+
+The late 14.2 patch releases carry the 15.3 behaviour: a warning, unless `allowedDevOrigins` is set.
+
+Two traps fall out of that table. Upgrading to 16.2 or later turns a warning you had been ignoring into a dead page. And on 15.3 to 16.1, adding `allowedDevOrigins` for one host (say, a tunnel URL) quietly starts blocking every other host, including the LAN address that worked yesterday.
+
+## Confirm it is this and not your component
+
+Before debugging any client component that "does nothing" on a device, check whether React hydrated the page at all. On the device, open the page with remote debugging (Chrome's `chrome://inspect` for Android, Safari's Develop menu for iOS) and run this in the console against an element React should own:
+
+```js title="Remote DevTools console"
+const el = document.querySelector("button");
+Object.keys(el).some((key) => key.startsWith("__reactProps$"));
+// false: React never hydrated this page
+```
+
+If it is `false`, stop looking at your component. The problem is the page, not the code in it. Then look at the dev server terminal for a "Blocked cross-origin request" line.
+
+## The fix
+
+Add the hostname you open the dev server from to `allowedDevOrigins` in `next.config`, then **restart the dev server**. Config changes do not hot reload, so the fix appears to do nothing until you restart.
+
+```js title="next.config.mjs"
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  allowedDevOrigins: ["192.168.1.6"],
+};
+
+export default nextConfig;
+```
+
+The values are hostnames: no `http://` and no port. Wildcards work for domains, such as `*.my-tunnel.example`.
+
+A hardcoded IP is a DHCP lease, though. It will change, and then you are back to a dead page with no error. What I use instead builds the list from the machine's own network interfaces each time the dev server starts, plus an environment variable for addresses the machine cannot see:
+
+```js title="next.config.mjs"
+import os from "node:os";
+
+// Every non-internal IPv4 address this machine holds right now, plus an
+// override for addresses it cannot see itself (WSL2, a VM, a tunnel).
+function lanAddresses() {
+  const detected = Object.values(os.networkInterfaces())
+    .flat()
+    .filter((iface) => iface && iface.family === "IPv4" && !iface.internal)
+    .map((iface) => iface.address);
+  const extra =
+    process.env.DEV_ALLOWED_ORIGINS?.split(",")
+      .map((s) => s.trim())
+      .filter(Boolean) ?? [];
+  return [...new Set([...detected, ...extra])];
+}
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  allowedDevOrigins: lanAddresses(),
+};
+
+export default nextConfig;
+```
+
+`allowedDevOrigins` only affects `next dev`, so this has no effect on production builds.
+
+**On WSL2**, the environment variable matters. With WSL's default NAT networking, the Linux side only sees its own internal address, while your phone connects to the Windows host's LAN address (through a port proxy you set up). `os.networkInterfaces()` cannot see that address, so pass it in:
+
+```bash title="Terminal (WSL2)"
+DEV_ALLOWED_ORIGINS=192.168.1.7 pnpm dev -H 0.0.0.0
+```
+
+With `networkingMode=mirrored` in `.wslconfig`, Linux sees the host's LAN address directly and the detection picks it up on its own.
+
+### Two other ways out
+
+- **Bind the dev server to the LAN address:** `next dev -H 192.168.1.6`. Next adds the hostname it is bound to to the allow list, so this works without config. The catch is that the server then listens only on that address, so `http://localhost:3000` stops answering.
+- **Test on devices against a production build:** `next build && next start -H 0.0.0.0`. Production has no dev endpoints and no origin check. For anything you would call a real device test (performance, animation smoothness, layout on a real screen) this is the better target anyway, because dev mode is slower and behaves differently.
+
+## How to check it worked
+
+Restart the dev server, then open the LAN address again:
+
+- The hydration check component says "hydrated" and the button counts.
+- The `__reactProps$` check in the remote console returns `true`.
+- The terminal shows no "Blocked cross-origin request" line, and a desktop browser's console shows `[HMR] connected`.
+
+Do this check over the LAN address, not over `localhost` or `127.0.0.1`. Those are always allowed, so a test against them passes whether the fix works or not.
+
+## What I would do differently
+
+- **Check hydration first.** When a client component does nothing on one device and works on another, the first question is "did React hydrate this page", and it takes ten seconds to answer. I spent a whole investigation on a component that was never running.
+- **Read the dev server terminal when testing on a device.** The only clear message is printed there, once.
+- **Put the LAN setup in `next.config` from the start** if anyone on the project checks work on a phone. It costs a few lines, and the failure it prevents gives you almost nothing to go on.
+
+I hit this while building one of the [sites on my home page](/#projects).

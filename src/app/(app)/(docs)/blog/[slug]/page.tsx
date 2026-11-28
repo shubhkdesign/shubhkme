@@ -19,6 +19,7 @@ import {
   getAllPosts,
   getPostBySlug,
 } from "@/features/blog/data/posts";
+import { getPostImage } from "@/features/blog/lib/get-post-image";
 import type { Post } from "@/features/blog/types/post";
 import { USER } from "@/features/profile/data/user";
 import { cn } from "@/lib/utils";
@@ -42,10 +43,10 @@ export async function generateMetadata({
     return notFound();
   }
 
-  const { title, description, image, createdAt, updatedAt } = post.metadata;
+  const { title, description, createdAt, updatedAt } = post.metadata;
 
   const postUrl = getPostUrl(post);
-  const ogImage = image || `/og/simple?title=${encodeURIComponent(title)}`;
+  const ogImage = getPostImage(post);
 
   return {
     title,
@@ -78,9 +79,7 @@ function getPageJsonLd(post: Post): WithContext<PageSchema> {
     "@type": "BlogPosting",
     headline: post.metadata.title,
     description: post.metadata.description,
-    image:
-      post.metadata.image ||
-      `/og/simple?title=${encodeURIComponent(post.metadata.title)}`,
+    image: new URL(getPostImage(post), SITE_INFO.url).toString(),
     url: `${SITE_INFO.url}${getPostUrl(post)}`,
     datePublished: dayjs(post.metadata.createdAt).toISOString(),
     dateModified: dayjs(post.metadata.updatedAt).toISOString(),

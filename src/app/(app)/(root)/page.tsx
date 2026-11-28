@@ -2,6 +2,7 @@ import dayjs from "dayjs";
 import type { ProfilePage as PageSchema, WithContext } from "schema-dts";
 
 import { About } from "@/features/profile/components/about";
+import { Blog } from "@/features/profile/components/blog";
 import { Experiences } from "@/features/profile/components/experiences";
 import { Overview } from "@/features/profile/components/overview";
 import { ProfileCover } from "@/features/profile/components/profile-cover";
@@ -40,8 +41,8 @@ export default function Page() {
         <TeckStack />
         <Separator />
 
-        {/* <Blog />
-        <Separator /> */}
+        <Blog />
+        <Separator />
 
         <Experiences />
         <Separator />
